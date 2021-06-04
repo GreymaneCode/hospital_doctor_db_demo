@@ -40,7 +40,7 @@ namespace DataBase_Demo
             else
             {
                 MessageBox.Show("Failed");
-                //123
+                //12
             }
 
         }
