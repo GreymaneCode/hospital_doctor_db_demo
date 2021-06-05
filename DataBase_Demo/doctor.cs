@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +15,7 @@ namespace DataBase_Demo
     {
         String inputId = string.Empty;
         String inputPasswd = string.Empty;
-        doctor_admin dcform = new doctor_admin();
+        doctor_admin dcad = new doctor_admin();
         public doctor()
         {
             InitializeComponent();
@@ -35,13 +35,16 @@ namespace DataBase_Demo
         {
             if(login())
             {
-                MessageBox.Show("Success");
+               
+                this.Hide();
+                doctor_menu doctor_menu_form = new doctor_menu(idTextBox.Text);
+                doctor_menu_form.Show();
+
             }
             else
             {
-                MessageBox.Show("Failed");
-                //1234
-                //4567
+                MessageBox.Show("Login Failed");
+                Application.Restart();
             }
 
         }
@@ -53,7 +56,7 @@ namespace DataBase_Demo
             {
                 DataSet ds = new DataSet();
                 OracleDataAdapter adapt_x = new OracleDataAdapter();
-                adapt_x = dcform.get_doc_passwd(idTextBox.Text);
+                adapt_x = dcad.get_doc_passwd(idTextBox.Text);
                 adapt_x.Fill(ds, "DOC_PASSWD");
 
                 int dataCount = ds.Tables["DOC_PASSWD"].Rows.Count;//table中的纪录总数

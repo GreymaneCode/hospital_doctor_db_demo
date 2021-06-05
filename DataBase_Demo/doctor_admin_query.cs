@@ -32,5 +32,27 @@ namespace DataBase_Demo
                 throw new Exception(ex.Message);
             }
         }
+        public OracleDataAdapter get_doc_info_query(string id)
+        {
+            String sql = string.Empty;
+            //sql = "select doctor_password from doctor where doctor_id = '" + id + "'";
+            //OracleCommand cmd = new OracleCommand(sql);
+
+            sql = "Select * From doctor where doctor_id=:id ";
+            OracleCommand cmd = new OracleCommand(sql);
+            cmd.Parameters.Add(new OracleParameter("id", id));
+
+
+            try
+            {
+                OracleDataAdapter adapt_doc_info = new OracleDataAdapter();
+                adapt_doc_info = dbutil.uniformed_query(cmd);
+                return adapt_doc_info;
+            }
+            catch (OracleException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

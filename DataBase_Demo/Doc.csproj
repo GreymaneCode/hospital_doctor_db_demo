@@ -109,10 +109,28 @@
     </Compile>
     <Compile Include="doctor_admin.cs" />
     <Compile Include="doctor_admin_query.cs" />
+    <Compile Include="doctor_menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="doctor_menu.Designer.cs">
+      <DependentUpon>doctor_menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="doctor_info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="doctor_info.Designer.cs">
+      <DependentUpon>doctor_info.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="doctor.resx">
       <DependentUpon>doctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="doctor_info.resx">
+      <DependentUpon>doctor_info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="doctor_menu.resx">
+      <DependentUpon>doctor_menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
