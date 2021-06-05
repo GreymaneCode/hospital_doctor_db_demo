@@ -87,7 +87,7 @@ namespace DataBase_Demo
             this.MaximumSize = new System.Drawing.Size(818, 497);
             this.MinimumSize = new System.Drawing.Size(818, 497);
             this.Name = "doctor_menu";
-            this.Text = "Form2";
+            this.Text = "doctor_menu";
             this.ResumeLayout(false);
 
         }

@@ -25,6 +25,7 @@ namespace DataBase_Demo
         {
             doctor_info doctor_info_form = new doctor_info(displayDoctorInfo(inputID));
             doctor_info_form.Show();
+
         }
 
         private void operationScheduleButton_Click(object sender, EventArgs e)
