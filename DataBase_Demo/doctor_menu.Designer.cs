@@ -33,6 +33,7 @@ namespace DataBase_Demo
             this.patientInfoButton = new System.Windows.Forms.Button();
             this.operationScheduleButton = new System.Windows.Forms.Button();
             this.operationReportButton = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // doctorInfoButton
@@ -75,11 +76,22 @@ namespace DataBase_Demo
             this.operationReportButton.UseVisualStyleBackColor = true;
             this.operationReportButton.Click += new System.EventHandler(this.operationReportButton_Click);
             // 
+            // exitButton
+            // 
+            this.exitButton.Location = new System.Drawing.Point(317, 369);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(120, 39);
+            this.exitButton.TabIndex = 4;
+            this.exitButton.Text = "退出";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
             // doctor_menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.operationReportButton);
             this.Controls.Add(this.operationScheduleButton);
             this.Controls.Add(this.patientInfoButton);
@@ -87,6 +99,7 @@ namespace DataBase_Demo
             this.MaximumSize = new System.Drawing.Size(818, 497);
             this.MinimumSize = new System.Drawing.Size(818, 497);
             this.Name = "doctor_menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "doctor_menu";
             this.ResumeLayout(false);
 
@@ -98,5 +111,6 @@ namespace DataBase_Demo
         private System.Windows.Forms.Button patientInfoButton;
         private System.Windows.Forms.Button operationScheduleButton;
         private System.Windows.Forms.Button operationReportButton;
+        private System.Windows.Forms.Button exitButton;
     }
 }

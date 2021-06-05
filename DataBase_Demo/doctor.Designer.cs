@@ -68,7 +68,6 @@ namespace DataBase_Demo
             this.idLabel.Size = new System.Drawing.Size(52, 15);
             this.idLabel.TabIndex = 3;
             this.idLabel.Text = "用户名";
-            this.idLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // passwdLabel
             // 
@@ -92,8 +91,8 @@ namespace DataBase_Demo
             this.MaximumSize = new System.Drawing.Size(400, 300);
             this.MinimumSize = new System.Drawing.Size(400, 300);
             this.Name = "doctor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "doctor";
-            this.Load += new System.EventHandler(this.doctor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

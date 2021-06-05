@@ -18,6 +18,10 @@ namespace DataBase_Demo
         {
             return dcquery.get_doc_info_query(id);
         }
+        public OracleDataAdapter get_patient_info(string id)
+        {
+            return dcquery.get_patient_info_query(id);
+        }
 
     }
 }

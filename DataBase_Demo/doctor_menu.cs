@@ -25,7 +25,6 @@ namespace DataBase_Demo
         {
             doctor_info doctor_info_form = new doctor_info(displayDoctorInfo(inputID));
             doctor_info_form.Show();
-
         }
 
         private void operationScheduleButton_Click(object sender, EventArgs e)
@@ -35,7 +34,8 @@ namespace DataBase_Demo
 
         private void patientInfoButton_Click(object sender, EventArgs e)
         {
-
+            patient_info patient_info_form = new patient_info(displayPatientInfo(inputID));
+            patient_info_form.Show();
         }
 
         private void operationReportButton_Click(object sender, EventArgs e)
@@ -50,7 +50,6 @@ namespace DataBase_Demo
                 DataSet ds = new DataSet();
                 OracleDataAdapter adapt_x = new OracleDataAdapter();
                 adapt_x = dcad.get_doc_info(id);
-                adapt_x.Fill(ds, "DOC_INFO");
                 return adapt_x;
             }
             catch (OracleException ex)
@@ -58,6 +57,27 @@ namespace DataBase_Demo
                 MessageBox.Show(ex.Message);
                 throw new Exception(ex.Message);
             }       
+        }
+        private OracleDataAdapter displayPatientInfo(string id)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                OracleDataAdapter adapt_x = new OracleDataAdapter();
+                adapt_x = dcad.get_patient_info(id);
+                return adapt_x;
+            }
+            catch (OracleException ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw new Exception(ex.Message);
+            }
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            Application.Exit();
         }
     }
 }

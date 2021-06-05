@@ -20,26 +20,13 @@ namespace DataBase_Demo
         {
             InitializeComponent();
         }
-
-        private void doctor_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void loginButton_Click(object sender, EventArgs e)
         {
             if(login())
             {
-               
                 this.Hide();
                 doctor_menu doctor_menu_form = new doctor_menu(idTextBox.Text);
                 doctor_menu_form.Show();
-
             }
             else
             {
