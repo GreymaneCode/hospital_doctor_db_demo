@@ -14,5 +14,10 @@ namespace DataBase_Demo
         {
             return dcquery.get_doc_passwd_query(id);
         }
+        public OracleDataAdapter get_doc_info(string id)
+        {
+            return dcquery.get_doc_info_query(id);
+        }
+
     }
 }
