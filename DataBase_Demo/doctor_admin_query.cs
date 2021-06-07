@@ -10,12 +10,10 @@ namespace DataBase_Demo
     public class doctor_admin_query
     {
         database_util dbutil = new database_util();
-        public OracleDataAdapter get_doc_passwd_query(string id)//病情查询
+        public OracleDataAdapter get_doc_passwd_query(string id)
         {
             String sql = string.Empty;
-            //sql = "select doctor_password from doctor where doctor_id = '" + id + "'";
-            //OracleCommand cmd = new OracleCommand(sql);
-
+          
             sql = "Select doctor_password From doctor where doctor_id=:id ";
             OracleCommand cmd = new OracleCommand(sql);
             cmd.Parameters.Add(new OracleParameter("id", id));
@@ -35,9 +33,7 @@ namespace DataBase_Demo
         public OracleDataAdapter get_doc_info_query(string id)
         {
             String sql = string.Empty;
-            //sql = "select doctor_password from doctor where doctor_id = '" + id + "'";
-            //OracleCommand cmd = new OracleCommand(sql);
-
+            
             sql = "Select * From doctor where doctor_id=:id ";
             OracleCommand cmd = new OracleCommand(sql);
             cmd.Parameters.Add(new OracleParameter("id", id));
@@ -57,9 +53,25 @@ namespace DataBase_Demo
         public OracleDataAdapter get_patient_info_query(string id)
         {
             String sql = string.Empty;
-            //sql = "select doctor_password from doctor where doctor_id = '" + id + "'";
-            //OracleCommand cmd = new OracleCommand(sql);
+            sql = "Select * From patient_state where doctor_id=:id ";
+            OracleCommand cmd = new OracleCommand(sql);
+            cmd.Parameters.Add(new OracleParameter("id", id));
 
+
+            try
+            {
+                OracleDataAdapter adapt_doc_info = new OracleDataAdapter();
+                adapt_doc_info = dbutil.uniformed_query(cmd);
+                return adapt_doc_info;
+            }
+            catch (OracleException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public OracleDataAdapter modify_patient_state_query(string id)
+        {
+            String sql = string.Empty;
             sql = "Select * From patient_state where doctor_id=:id ";
             OracleCommand cmd = new OracleCommand(sql);
             cmd.Parameters.Add(new OracleParameter("id", id));

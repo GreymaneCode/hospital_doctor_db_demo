@@ -32,6 +32,7 @@ namespace DataBase_Demo
             this.dataGridView_patient_info = new System.Windows.Forms.DataGridView();
             this.backButton = new System.Windows.Forms.Button();
             this.modifyButton = new System.Windows.Forms.Button();
+            this.prescribeButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_patient_info)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +52,7 @@ namespace DataBase_Demo
             // 
             // backButton
             // 
-            this.backButton.Location = new System.Drawing.Point(507, 323);
+            this.backButton.Location = new System.Drawing.Point(567, 323);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(120, 49);
             this.backButton.TabIndex = 1;
@@ -69,11 +70,22 @@ namespace DataBase_Demo
             this.modifyButton.UseVisualStyleBackColor = true;
             this.modifyButton.Click += new System.EventHandler(this.modifyButton_Click);
             // 
+            // prescribeButton
+            // 
+            this.prescribeButton.Location = new System.Drawing.Point(327, 325);
+            this.prescribeButton.Name = "prescribeButton";
+            this.prescribeButton.Size = new System.Drawing.Size(132, 46);
+            this.prescribeButton.TabIndex = 3;
+            this.prescribeButton.Text = "开药";
+            this.prescribeButton.UseVisualStyleBackColor = true;
+            this.prescribeButton.Click += new System.EventHandler(this.prescribeButton_Click);
+            // 
             // patient_info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.prescribeButton);
             this.Controls.Add(this.modifyButton);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.dataGridView_patient_info);
@@ -92,5 +104,6 @@ namespace DataBase_Demo
         private System.Windows.Forms.DataGridView dataGridView_patient_info;
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Button modifyButton;
+        private System.Windows.Forms.Button prescribeButton;
     }
 }

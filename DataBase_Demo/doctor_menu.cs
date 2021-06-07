@@ -23,7 +23,7 @@ namespace DataBase_Demo
 
         private void doctorInfoButton_Click(object sender, EventArgs e)
         {
-            doctor_info doctor_info_form = new doctor_info(displayDoctorInfo(inputID));
+            doctor_info doctor_info_form = new doctor_info(inputID);
             doctor_info_form.Show();
         }
 
@@ -34,7 +34,7 @@ namespace DataBase_Demo
 
         private void patientInfoButton_Click(object sender, EventArgs e)
         {
-            patient_info patient_info_form = new patient_info(displayPatientInfo(inputID));
+            patient_info patient_info_form = new patient_info(inputID);
             patient_info_form.Show();
         }
 
@@ -43,36 +43,7 @@ namespace DataBase_Demo
 
         }
 
-        private OracleDataAdapter displayDoctorInfo(string id)
-        {
-            try
-            {
-                DataSet ds = new DataSet();
-                OracleDataAdapter adapt_x = new OracleDataAdapter();
-                adapt_x = dcad.get_doc_info(id);
-                return adapt_x;
-            }
-            catch (OracleException ex)
-            {
-                MessageBox.Show(ex.Message);
-                throw new Exception(ex.Message);
-            }       
-        }
-        private OracleDataAdapter displayPatientInfo(string id)
-        {
-            try
-            {
-                DataSet ds = new DataSet();
-                OracleDataAdapter adapt_x = new OracleDataAdapter();
-                adapt_x = dcad.get_patient_info(id);
-                return adapt_x;
-            }
-            catch (OracleException ex)
-            {
-                MessageBox.Show(ex.Message);
-                throw new Exception(ex.Message);
-            }
-        }
+     
 
         private void exitButton_Click(object sender, EventArgs e)
         {

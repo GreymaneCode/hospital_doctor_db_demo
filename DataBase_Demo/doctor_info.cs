@@ -13,14 +13,17 @@ namespace DataBase_Demo
 {
     public partial class doctor_info : Form
     {
-        public doctor_info(OracleDataAdapter adapter)
+        doctor_admin dcad = new doctor_admin();
+        public doctor_info(string id)
         {
             InitializeComponent();
             try
             {
                 DataSet ds = new DataSet();
-                adapter.Fill(ds, "t");    
-                dataGridView1.DataSource = ds.Tables["t"];
+                OracleDataAdapter adapt_x = new OracleDataAdapter();
+                adapt_x = dcad.get_doc_info(id);
+                adapt_x.Fill(ds, "t");
+                dataGridView_doctor_info.DataSource = ds.Tables["t"];
             }
             catch (OracleException ex)
             {

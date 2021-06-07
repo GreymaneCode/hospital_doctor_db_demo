@@ -29,22 +29,22 @@ namespace DataBase_Demo
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView_doctor_info = new System.Windows.Forms.DataGridView();
             this.backButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_doctor_info)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridView_doctor_info
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 48);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(924, 173);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridView_doctor_info.AllowUserToAddRows = false;
+            this.dataGridView_doctor_info.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_doctor_info.Location = new System.Drawing.Point(12, 48);
+            this.dataGridView_doctor_info.Name = "dataGridView_doctor_info";
+            this.dataGridView_doctor_info.ReadOnly = true;
+            this.dataGridView_doctor_info.RowHeadersWidth = 51;
+            this.dataGridView_doctor_info.RowTemplate.Height = 27;
+            this.dataGridView_doctor_info.Size = new System.Drawing.Size(924, 173);
+            this.dataGridView_doctor_info.TabIndex = 0;
             // 
             // backButton
             // 
@@ -62,20 +62,20 @@ namespace DataBase_Demo
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 450);
             this.Controls.Add(this.backButton);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridView_doctor_info);
             this.MaximumSize = new System.Drawing.Size(966, 497);
             this.MinimumSize = new System.Drawing.Size(966, 497);
             this.Name = "doctor_info";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "doctor_info";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_doctor_info)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView_doctor_info;
         private System.Windows.Forms.Button backButton;
     }
 }

@@ -26,3 +26,5 @@ D:\c盘桌面\Doc_5.25\DataBase_Demo_new\DataBase_Demo\DataBase_Demo\obj\Debug\D
 D:\c盘桌面\Doc_5.25\DataBase_Demo_new\DataBase_Demo\DataBase_Demo\obj\Debug\DataBase_Demo.doctor_menu.resources
 D:\c盘桌面\Doc_5.25\DataBase_Demo_new\DataBase_Demo\DataBase_Demo\obj\Debug\DataBase_Demo.doctor_info.resources
 D:\c盘桌面\Doc_5.25\DataBase_Demo_new\DataBase_Demo\DataBase_Demo\obj\Debug\DataBase_Demo.patient_Info.resources
+D:\c盘桌面\Doc_5.25\DataBase_Demo_new\DataBase_Demo\DataBase_Demo\obj\Debug\DataBase_Demo.patient_state_modify.resources
+D:\c盘桌面\Doc_5.25\DataBase_Demo_new\DataBase_Demo\DataBase_Demo\obj\Debug\DataBase_Demo.prescribe_add.resources

@@ -22,7 +22,7 @@ namespace DataBase_Demo
         }
         private void loginButton_Click(object sender, EventArgs e)
         {
-            if(login())
+            if(dcad.login(idTextBox.Text,passwdTextBox.Text))
             {
                 this.Hide();
                 doctor_menu doctor_menu_form = new doctor_menu(idTextBox.Text);
@@ -34,45 +34,6 @@ namespace DataBase_Demo
                 Application.Restart();
             }
 
-        }
-        private bool login()
-        {
-            inputId = idTextBox.Text;
-            inputPasswd = passwdTextBox.Text;
-            try
-            {
-                DataSet ds = new DataSet();
-                OracleDataAdapter adapt_x = new OracleDataAdapter();
-                adapt_x = dcad.get_doc_passwd(idTextBox.Text);
-                adapt_x.Fill(ds, "DOC_PASSWD");
-
-                int dataCount = ds.Tables["DOC_PASSWD"].Rows.Count;//table中的纪录总数
-
-                if (dataCount == 1)
-                {
-                    DataTable pswd_table = ds.Tables["DOC_PASSWD"];
-                    DataRow row = pswd_table.Rows[0];
-                    string doc_passwd = row["doctor_password"].ToString();
-                    if (passwdTextBox.Text == doc_passwd)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        //有账户，但是密码错了
-                        return false;
-                    }
-                }
-                else //查无此人
-                {
-                    return false;
-                }
-            }
-            catch (OracleException ex)
-            {
-                MessageBox.Show(ex.Message);
-                throw new Exception(ex.Message);
-            }
         }
     }
 }
