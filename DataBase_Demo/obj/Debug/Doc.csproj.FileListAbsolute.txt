@@ -23,8 +23,11 @@ D:\c盘桌面\Doc_5.25\DataBase_Demo_new\DataBase_Demo\DataBase_Demo\obj\Debug\D
 D:\c盘桌面\Doc_5.25\DataBase_Demo_new\DataBase_Demo\DataBase_Demo\obj\Debug\Doc.csproj.CopyComplete
 D:\c盘桌面\Doc_5.25\DataBase_Demo_new\DataBase_Demo\DataBase_Demo\obj\Debug\DataBase_Demo.exe
 D:\c盘桌面\Doc_5.25\DataBase_Demo_new\DataBase_Demo\DataBase_Demo\obj\Debug\DataBase_Demo.pdb
+<<<<<<< Updated upstream
 D:\c盘桌面\Doc_5.25\DataBase_Demo_new\DataBase_Demo\DataBase_Demo\obj\Debug\DataBase_Demo.doctor_menu.resources
 D:\c盘桌面\Doc_5.25\DataBase_Demo_new\DataBase_Demo\DataBase_Demo\obj\Debug\DataBase_Demo.doctor_info.resources
+=======
+>>>>>>> Stashed changes
 C:\Github\hospital_doctor_db_demo\DataBase_Demo\bin\Debug\DataBase_Demo.exe.config
 C:\Github\hospital_doctor_db_demo\DataBase_Demo\bin\Debug\DataBase_Demo.exe.manifest
 C:\Github\hospital_doctor_db_demo\DataBase_Demo\bin\Debug\DataBase_Demo.application
@@ -42,8 +45,11 @@ C:\Github\hospital_doctor_db_demo\DataBase_Demo\bin\Debug\System.Security.Permis
 C:\Github\hospital_doctor_db_demo\DataBase_Demo\bin\Debug\System.Security.Principal.Windows.xml
 C:\Github\hospital_doctor_db_demo\DataBase_Demo\obj\Debug\Doc.csprojAssemblyReference.cache
 C:\Github\hospital_doctor_db_demo\DataBase_Demo\obj\Debug\DataBase_Demo.doctor.resources
+<<<<<<< Updated upstream
 C:\Github\hospital_doctor_db_demo\DataBase_Demo\obj\Debug\DataBase_Demo.doctor_info.resources
 C:\Github\hospital_doctor_db_demo\DataBase_Demo\obj\Debug\DataBase_Demo.doctor_menu.resources
+=======
+>>>>>>> Stashed changes
 C:\Github\hospital_doctor_db_demo\DataBase_Demo\obj\Debug\DataBase_Demo.Properties.Resources.resources
 C:\Github\hospital_doctor_db_demo\DataBase_Demo\obj\Debug\Doc.csproj.GenerateResource.cache
 C:\Github\hospital_doctor_db_demo\DataBase_Demo\obj\Debug\DataBase_Demo.exe.manifest
@@ -51,4 +57,7 @@ C:\Github\hospital_doctor_db_demo\DataBase_Demo\obj\Debug\DataBase_Demo.applicat
 C:\Github\hospital_doctor_db_demo\DataBase_Demo\obj\Debug\Doc.csproj.CopyComplete
 C:\Github\hospital_doctor_db_demo\DataBase_Demo\obj\Debug\DataBase_Demo.exe
 C:\Github\hospital_doctor_db_demo\DataBase_Demo\obj\Debug\DataBase_Demo.pdb
+<<<<<<< Updated upstream
 C:\Github\hospital_doctor_db_demo\DataBase_Demo\obj\Debug\DataBase_Demo.operationSchedule_info.resources
+=======
+>>>>>>> Stashed changes
