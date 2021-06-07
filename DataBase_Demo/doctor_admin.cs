@@ -62,5 +62,10 @@ namespace DataBase_Demo
                 throw new Exception(ex.Message);
             }
         }
+
+        public OracleDataAdapter get_oper_info(string id)
+        {
+            return dcquery.get_oper_info_query(id);
+        }
     }
 }

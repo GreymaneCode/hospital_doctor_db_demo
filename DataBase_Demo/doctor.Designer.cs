@@ -38,10 +38,9 @@ namespace DataBase_Demo
             // 
             // loginButton
             // 
-            this.loginButton.Location = new System.Drawing.Point(100, 167);
-            this.loginButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.loginButton.Location = new System.Drawing.Point(89, 139);
             this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(84, 28);
+            this.loginButton.Size = new System.Drawing.Size(75, 23);
             this.loginButton.TabIndex = 0;
             this.loginButton.Text = "登录";
             this.loginButton.UseVisualStyleBackColor = true;
@@ -49,52 +48,49 @@ namespace DataBase_Demo
             // 
             // idTextBox
             // 
-            this.idTextBox.Location = new System.Drawing.Point(99, 35);
-            this.idTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.idTextBox.Location = new System.Drawing.Point(88, 29);
             this.idTextBox.Name = "idTextBox";
-            this.idTextBox.Size = new System.Drawing.Size(174, 28);
+            this.idTextBox.Size = new System.Drawing.Size(155, 25);
             this.idTextBox.TabIndex = 1;
-            this.idTextBox.TextChanged += new System.EventHandler(this.idTextBox_TextChanged);
+      
             // 
             // passwdTextBox
             // 
-            this.passwdTextBox.Location = new System.Drawing.Point(100, 89);
-            this.passwdTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.passwdTextBox.Location = new System.Drawing.Point(89, 74);
             this.passwdTextBox.Name = "passwdTextBox";
-            this.passwdTextBox.Size = new System.Drawing.Size(172, 28);
+            this.passwdTextBox.Size = new System.Drawing.Size(153, 25);
             this.passwdTextBox.TabIndex = 2;
             // 
             // idLabel
             // 
             this.idLabel.AutoSize = true;
-            this.idLabel.Location = new System.Drawing.Point(34, 38);
+            this.idLabel.Location = new System.Drawing.Point(30, 32);
             this.idLabel.Name = "idLabel";
-            this.idLabel.Size = new System.Drawing.Size(62, 18);
+            this.idLabel.Size = new System.Drawing.Size(52, 15);
             this.idLabel.TabIndex = 3;
             this.idLabel.Text = "用户名";
             // 
             // passwdLabel
             // 
             this.passwdLabel.AutoSize = true;
-            this.passwdLabel.Location = new System.Drawing.Point(51, 92);
+            this.passwdLabel.Location = new System.Drawing.Point(45, 77);
             this.passwdLabel.Name = "passwdLabel";
-            this.passwdLabel.Size = new System.Drawing.Size(44, 18);
+            this.passwdLabel.Size = new System.Drawing.Size(37, 15);
             this.passwdLabel.TabIndex = 4;
             this.passwdLabel.Text = "密码";
             // 
             // doctor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(425, 293);
+            this.ClientSize = new System.Drawing.Size(381, 252);
             this.Controls.Add(this.passwdLabel);
             this.Controls.Add(this.idLabel);
             this.Controls.Add(this.passwdTextBox);
             this.Controls.Add(this.idTextBox);
             this.Controls.Add(this.loginButton);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.MaximumSize = new System.Drawing.Size(447, 349);
-            this.MinimumSize = new System.Drawing.Size(447, 349);
+            this.MaximumSize = new System.Drawing.Size(399, 299);
+            this.MinimumSize = new System.Drawing.Size(399, 299);
             this.Name = "doctor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "doctor";
