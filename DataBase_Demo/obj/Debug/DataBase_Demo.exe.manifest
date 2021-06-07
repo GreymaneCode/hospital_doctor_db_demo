@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataBase_Demo.exe" size="15864">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataBase_Demo.exe" size="17912">
       <assemblyIdentity name="DataBase_Demo" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>TorYSXuNFNXaNAJA77je9Z/bFONUKQk8k8977mKk7BE=</dsig:DigestValue>
+        <dsig:DigestValue>Ij9R5uLzH+8grVSmGKiQdh3bngbzIThnEjwq6CSlH18=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -125,13 +125,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="DataBase_Demo.exe.config" size="1892">
+  <file name="DataBase_Demo.exe.config" size="1885">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>N8zDPAUyYdE299SJab/5P2p9QieEkzWYJafkOLW5+Gk=</dsig:DigestValue>
+      <dsig:DigestValue>2ojf1eCz4ZOMyjHJGfpiioPumOhriTVTnzdlo5Ic+TY=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

@@ -29,26 +29,29 @@ namespace DataBase_Demo
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView_doctor_info = new System.Windows.Forms.DataGridView();
             this.backButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_doctor_info)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridView_doctor_info
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 48);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(924, 173);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridView_doctor_info.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_doctor_info.Location = new System.Drawing.Point(14, 58);
+            this.dataGridView_doctor_info.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridView_doctor_info.Name = "dataGridView_doctor_info";
+            this.dataGridView_doctor_info.RowHeadersWidth = 51;
+            this.dataGridView_doctor_info.RowTemplate.Height = 27;
+            this.dataGridView_doctor_info.Size = new System.Drawing.Size(1040, 208);
+            this.dataGridView_doctor_info.TabIndex = 0;
+           
             // 
             // backButton
             // 
-            this.backButton.Location = new System.Drawing.Point(376, 310);
+            this.backButton.Location = new System.Drawing.Point(423, 372);
+            this.backButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(143, 43);
+            this.backButton.Size = new System.Drawing.Size(161, 52);
             this.backButton.TabIndex = 1;
             this.backButton.Text = "返回";
             this.backButton.UseVisualStyleBackColor = true;
@@ -56,23 +59,24 @@ namespace DataBase_Demo
             // 
             // doctor_info
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(948, 450);
+            this.ClientSize = new System.Drawing.Size(1062, 529);
             this.Controls.Add(this.backButton);
-            this.Controls.Add(this.dataGridView1);
-            this.MaximumSize = new System.Drawing.Size(966, 497);
-            this.MinimumSize = new System.Drawing.Size(966, 497);
+            this.Controls.Add(this.dataGridView_doctor_info);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximumSize = new System.Drawing.Size(1084, 585);
+            this.MinimumSize = new System.Drawing.Size(1084, 585);
             this.Name = "doctor_info";
             this.Text = "doctor_info";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_doctor_info)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView_doctor_info;
         private System.Windows.Forms.Button backButton;
     }
 }

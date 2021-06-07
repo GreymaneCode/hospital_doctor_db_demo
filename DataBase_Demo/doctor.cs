@@ -87,5 +87,10 @@ namespace DataBase_Demo
                 throw new Exception(ex.Message);
             }
         }
+
+        private void idTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

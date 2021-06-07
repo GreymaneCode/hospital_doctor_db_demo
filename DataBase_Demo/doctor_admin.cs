@@ -18,6 +18,10 @@ namespace DataBase_Demo
         {
             return dcquery.get_doc_info_query(id);
         }
-
+        public OracleDataAdapter get_oper_info(string id)//, string current_time)
+        {
+            return dcquery.get_oper_info_query(id);//,current_time);
+        }
+        
     }
 }

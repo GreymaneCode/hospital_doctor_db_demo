@@ -54,5 +54,28 @@ namespace DataBase_Demo
                 throw new Exception(ex.Message);
             }
         }
+
+        public OracleDataAdapter get_oper_info_query(string id)//,string current_time)
+        {
+            String sql = string.Empty;
+
+            sql = "Select * From operation where doctor_id=:id ";// AND operation_date>to_timestamp('2012-07-28','yyyy-mm-dd')";
+            OracleCommand cmd = new OracleCommand(sql);
+            cmd.Parameters.Add(new OracleParameter("id", id));
+           // cmd.Parameters.Add(new OracleParameter("current_time", current_time));
+
+
+            try
+            {
+                OracleDataAdapter adapt_doc_info = new OracleDataAdapter();
+                adapt_doc_info = dbutil.uniformed_query(cmd);
+                return adapt_doc_info;
+            }
+            catch (OracleException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        
     }
 }

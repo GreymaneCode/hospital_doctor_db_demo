@@ -11,16 +11,21 @@ using Oracle.ManagedDataAccess.Client;
 
 namespace DataBase_Demo
 {
-    public partial class doctor_info : Form
+    public partial class operationSchedule_info : Form
     {
-        public doctor_info(OracleDataAdapter adapter)
+        public operationSchedule_info()
+        {
+            InitializeComponent();
+        }
+
+        public operationSchedule_info(OracleDataAdapter adapter)
         {
             InitializeComponent();
             try
             {
                 DataSet ds = new DataSet();
-                adapter.Fill(ds, "t");    
-                dataGridView_doctor_info.DataSource = ds.Tables["t"];
+                adapter.Fill(ds, "operscheinfo");
+                dataGridView_operation_info.DataSource = ds.Tables["operscheinfo"];
             }
             catch (OracleException ex)
             {
@@ -29,10 +34,11 @@ namespace DataBase_Demo
             }
         }
 
+        
+
         private void backButton_Click(object sender, EventArgs e)
         {
             this.Close();
-
         }
 
        
