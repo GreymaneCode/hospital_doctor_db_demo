@@ -5,3 +5,5 @@
 *.exe
 *.application
 *.application
+DataBase_Demo/obj/Debug/Doc.csprojAssemblyReference.cache
+.vs/Doc/v16/.suo
