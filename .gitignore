@@ -7,3 +7,9 @@
 *.application
 DataBase_Demo/obj/Debug/Doc.csprojAssemblyReference.cache
 .vs/Doc/v16/.suo
+*.cache
+.vs/Doc/v16/Server/sqlite3/storage.ide-shm
+.vs/Doc/v16/Server/sqlite3/storage.ide-wal
+DataBase_Demo/obj/Debug/Doc.csprojAssemblyReference.cache
+!*.cs
+!*.resx
