@@ -13,7 +13,8 @@ namespace DataBase_Demo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new doctor_menu("100001"));
+            Application.Run(new doctor());
+            //Application.Run(new doctor_menu("100001"));
             System.Environment.Exit(0);
         }
     }

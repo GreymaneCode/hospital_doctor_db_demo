@@ -100,72 +100,72 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="database_util.cs" />
-    <Compile Include="doctor.cs">
+    <Compile Include="database_util\database_util.cs" />
+    <Compile Include="UI\doctor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="doctor.Designer.cs">
+    <Compile Include="UI\doctor.Designer.cs">
       <DependentUpon>doctor.cs</DependentUpon>
     </Compile>
-    <Compile Include="doctor_admin.cs" />
-    <Compile Include="doctor_admin_query.cs" />
-    <Compile Include="doctor_menu.cs">
+    <Compile Include="doctor_admin\doctor_admin.cs" />
+    <Compile Include="doctor_admin_query\doctor_admin_query.cs" />
+    <Compile Include="UI\doctor_menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="doctor_menu.Designer.cs">
+    <Compile Include="UI\doctor_menu.Designer.cs">
       <DependentUpon>doctor_menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="doctor_info.cs">
+    <Compile Include="UI\doctor_info.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="doctor_info.Designer.cs">
+    <Compile Include="UI\doctor_info.Designer.cs">
       <DependentUpon>doctor_info.cs</DependentUpon>
     </Compile>
-    <Compile Include="operationSchedule_info.cs">
+    <Compile Include="UI\operationSchedule_info.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="operationSchedule_info.Designer.cs">
+    <Compile Include="UI\operationSchedule_info.Designer.cs">
       <DependentUpon>operationSchedule_info.cs</DependentUpon>
     </Compile>
-    <Compile Include="prescribe_add.cs">
+    <Compile Include="UI\prescribe_add.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="prescribe_add.Designer.cs">
+    <Compile Include="UI\prescribe_add.Designer.cs">
       <DependentUpon>prescribe_add.cs</DependentUpon>
     </Compile>
-    <Compile Include="patient_state_modify.cs">
+    <Compile Include="UI\patient_state_modify.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="patient_state_modify.Designer.cs">
+    <Compile Include="UI\patient_state_modify.Designer.cs">
       <DependentUpon>patient_state_modify.cs</DependentUpon>
     </Compile>
-    <Compile Include="patient_info.cs">
+    <Compile Include="UI\patient_info.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="patient_info.Designer.cs">
+    <Compile Include="UI\patient_info.Designer.cs">
       <DependentUpon>patient_info.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="doctor.resx">
+    <EmbeddedResource Include="UI\doctor.resx">
       <DependentUpon>doctor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="doctor_info.resx">
+    <EmbeddedResource Include="UI\doctor_info.resx">
       <DependentUpon>doctor_info.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="doctor_menu.resx">
+    <EmbeddedResource Include="UI\doctor_menu.resx">
       <DependentUpon>doctor_menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="operationSchedule_info.resx">
+    <EmbeddedResource Include="UI\operationSchedule_info.resx">
       <DependentUpon>operationSchedule_info.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="patient_info.resx">
+    <EmbeddedResource Include="UI\patient_info.resx">
       <DependentUpon>patient_info.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="patient_state_modify.resx">
+    <EmbeddedResource Include="UI\patient_state_modify.resx">
       <DependentUpon>patient_state_modify.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="prescribe_add.resx">
+    <EmbeddedResource Include="UI\prescribe_add.resx">
       <DependentUpon>prescribe_add.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -204,5 +204,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataBase_Demo.exe" size="29688">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataBase_Demo.exe" size="32248">
       <assemblyIdentity name="DataBase_Demo" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>qbTl4yWVu0leWQCFZ+YaGzfOWQf5CwDd0x44PkeRcDo=</dsig:DigestValue>
+        <dsig:DigestValue>6CQ8+Zkd+2dAPdRT2r/sBL1Qrm75xWwR4xzLxQrX6Ok=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
