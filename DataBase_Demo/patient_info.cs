@@ -16,6 +16,7 @@ namespace DataBase_Demo
         public patient_info(string id)
         {
             InitializeComponent();
+            Bool_To_Text(dataGridView_patient_info, "need_operation_col", "否", "0", "是", "1");
             try
             {
                 DataSet ds = new DataSet();
@@ -23,6 +24,7 @@ namespace DataBase_Demo
                 adapt_x = dcad.get_patient_info(id);
                 adapt_x.Fill(ds, "t");
                 dataGridView_patient_info.DataSource = ds.Tables["t"];
+               // Bool_To_Text(dataGridView_patient_info, "need_operation_col", "否", "0", "是", "1");
             }
             catch (OracleException ex)
             {
@@ -31,6 +33,20 @@ namespace DataBase_Demo
             }
         }
 
+        private void Bool_To_Text(DataGridView gdv, String col_name, String F_test, String F_value, String T_test, String T_value)
+        {
+            //将gdv中col_name列中的布尔值与文本绑定
+
+            ((DataGridViewComboBoxColumn)dataGridView_patient_info.Columns[col_name]).DisplayMember = "text";
+            ((DataGridViewComboBoxColumn)dataGridView_patient_info.Columns[col_name]).ValueMember = "value";
+            DataTable dtM = new DataTable();
+            dtM.Columns.Add("text");
+            dtM.Columns.Add("value", typeof(String));
+            dtM.Rows.Add(new object[] { F_test, F_value });
+            dtM.Rows.Add(new object[] { T_test, T_value });
+            ((DataGridViewComboBoxColumn)dataGridView_patient_info.Columns[col_name]).DataSource = dtM;
+
+        }
         private void backButton_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -61,5 +77,7 @@ namespace DataBase_Demo
             prescribe_add prescribe_add_form = new prescribe_add(inx,id);
             prescribe_add_form.Show();
         }
+
+       
     }
 }

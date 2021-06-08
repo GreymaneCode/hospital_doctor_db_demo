@@ -7,3 +7,12 @@
 *.application
 DataBase_Demo/obj/Debug/Doc.csprojAssemblyReference.cache
 .vs/Doc/v16/.suo
+DataBase_Demo/bin/Debug/app.publish/DataBase_Demo.exe
+DataBase_Demo/bin/Debug/app.publish/DataBase_Demo.exe
+*.application
+*.exe
+*.manifest
+*.pdb
+*.application
+*.exe
+*.cache

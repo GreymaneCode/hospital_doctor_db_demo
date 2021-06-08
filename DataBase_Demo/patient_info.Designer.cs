@@ -33,26 +33,42 @@ namespace DataBase_Demo
             this.backButton = new System.Windows.Forms.Button();
             this.modifyButton = new System.Windows.Forms.Button();
             this.prescribeButton = new System.Windows.Forms.Button();
+            this.patient_id_check_box = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.patient_id_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.state_time_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ill_con_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.need_operation_col = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.advice_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_patient_info)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView_patient_info
             // 
             this.dataGridView_patient_info.AllowUserToAddRows = false;
+            this.dataGridView_patient_info.AllowUserToDeleteRows = false;
+            this.dataGridView_patient_info.AllowUserToResizeColumns = false;
+            this.dataGridView_patient_info.AllowUserToResizeRows = false;
             this.dataGridView_patient_info.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_patient_info.Location = new System.Drawing.Point(98, 50);
+            this.dataGridView_patient_info.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.patient_id_check_box,
+            this.patient_id_col,
+            this.state_time_col,
+            this.ill_con_col,
+            this.need_operation_col,
+            this.advice_col});
+            this.dataGridView_patient_info.Location = new System.Drawing.Point(12, 12);
             this.dataGridView_patient_info.MultiSelect = false;
             this.dataGridView_patient_info.Name = "dataGridView_patient_info";
-            this.dataGridView_patient_info.ReadOnly = true;
+            this.dataGridView_patient_info.RowHeadersVisible = false;
             this.dataGridView_patient_info.RowHeadersWidth = 51;
             this.dataGridView_patient_info.RowTemplate.Height = 27;
-            this.dataGridView_patient_info.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_patient_info.Size = new System.Drawing.Size(589, 213);
+            this.dataGridView_patient_info.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridView_patient_info.Size = new System.Drawing.Size(776, 307);
             this.dataGridView_patient_info.TabIndex = 0;
             // 
             // backButton
             // 
-            this.backButton.Location = new System.Drawing.Point(567, 323);
+            this.backButton.Location = new System.Drawing.Point(589, 356);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(120, 49);
             this.backButton.TabIndex = 1;
@@ -62,7 +78,7 @@ namespace DataBase_Demo
             // 
             // modifyButton
             // 
-            this.modifyButton.Location = new System.Drawing.Point(123, 323);
+            this.modifyButton.Location = new System.Drawing.Point(100, 356);
             this.modifyButton.Name = "modifyButton";
             this.modifyButton.Size = new System.Drawing.Size(120, 49);
             this.modifyButton.TabIndex = 2;
@@ -72,13 +88,68 @@ namespace DataBase_Demo
             // 
             // prescribeButton
             // 
-            this.prescribeButton.Location = new System.Drawing.Point(327, 325);
+            this.prescribeButton.Location = new System.Drawing.Point(336, 357);
             this.prescribeButton.Name = "prescribeButton";
             this.prescribeButton.Size = new System.Drawing.Size(132, 46);
             this.prescribeButton.TabIndex = 3;
             this.prescribeButton.Text = "开药";
             this.prescribeButton.UseVisualStyleBackColor = true;
             this.prescribeButton.Click += new System.EventHandler(this.prescribeButton_Click);
+            // 
+            // patient_id_check_box
+            // 
+            this.patient_id_check_box.HeaderText = "选择";
+            this.patient_id_check_box.MinimumWidth = 6;
+            this.patient_id_check_box.Name = "patient_id_check_box";
+            this.patient_id_check_box.Width = 125;
+            // 
+            // patient_id_col
+            // 
+            this.patient_id_col.DataPropertyName = "patient_id";
+            this.patient_id_col.HeaderText = "病人编号";
+            this.patient_id_col.MinimumWidth = 6;
+            this.patient_id_col.Name = "patient_id_col";
+            this.patient_id_col.ReadOnly = true;
+            this.patient_id_col.Width = 125;
+            // 
+            // state_time_col
+            // 
+            this.state_time_col.DataPropertyName = "state_time";
+            this.state_time_col.HeaderText = "更新时间";
+            this.state_time_col.MinimumWidth = 6;
+            this.state_time_col.Name = "state_time_col";
+            this.state_time_col.ReadOnly = true;
+            this.state_time_col.Width = 125;
+            // 
+            // ill_con_col
+            // 
+            this.ill_con_col.DataPropertyName = "illness_condition";
+            this.ill_con_col.HeaderText = "病情";
+            this.ill_con_col.MinimumWidth = 6;
+            this.ill_con_col.Name = "ill_con_col";
+            this.ill_con_col.ReadOnly = true;
+            this.ill_con_col.Width = 125;
+            // 
+            // need_operation_col
+            // 
+            this.need_operation_col.DataPropertyName = "need_operation";
+            this.need_operation_col.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.need_operation_col.HeaderText = "是否需要手术";
+            this.need_operation_col.MinimumWidth = 6;
+            this.need_operation_col.Name = "need_operation_col";
+            this.need_operation_col.ReadOnly = true;
+            this.need_operation_col.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.need_operation_col.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.need_operation_col.Width = 125;
+            // 
+            // advice_col
+            // 
+            this.advice_col.DataPropertyName = "advice";
+            this.advice_col.HeaderText = "医嘱";
+            this.advice_col.MinimumWidth = 6;
+            this.advice_col.Name = "advice_col";
+            this.advice_col.ReadOnly = true;
+            this.advice_col.Width = 125;
             // 
             // patient_info
             // 
@@ -105,5 +176,11 @@ namespace DataBase_Demo
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Button modifyButton;
         private System.Windows.Forms.Button prescribeButton;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn patient_id_check_box;
+        private System.Windows.Forms.DataGridViewTextBoxColumn patient_id_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn state_time_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ill_con_col;
+        private System.Windows.Forms.DataGridViewComboBoxColumn need_operation_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn advice_col;
     }
 }
