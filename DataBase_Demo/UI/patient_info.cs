@@ -13,10 +13,16 @@ namespace DataBase_Demo
     public partial class patient_info : Form
     {
         doctor_admin dcad = new doctor_admin();
-        public patient_info(string id)
+        string doctor_id = string.Empty;
+        public patient_info(string inputId)
         {
             InitializeComponent();
+            doctor_id = inputId;
             Bool_To_Text(dataGridView_patient_info, "need_operation_col", "否", "0", "是", "1");
+            display(doctor_id);
+        }
+        private void display(string id)
+        {
             try
             {
                 DataSet ds = new DataSet();
@@ -24,7 +30,6 @@ namespace DataBase_Demo
                 adapt_x = dcad.get_patient_info(id);
                 adapt_x.Fill(ds, "t");
                 dataGridView_patient_info.DataSource = ds.Tables["t"];
-               // Bool_To_Text(dataGridView_patient_info, "need_operation_col", "否", "0", "是", "1");
             }
             catch (OracleException ex)
             {
@@ -32,7 +37,6 @@ namespace DataBase_Demo
                 throw new Exception(ex.Message);
             }
         }
-
         private void Bool_To_Text(DataGridView gdv, String col_name, String F_test, String F_value, String T_test, String T_value)
         {
             //将gdv中col_name列中的布尔值与文本绑定
@@ -54,30 +58,73 @@ namespace DataBase_Demo
 
         private void modifyButton_Click(object sender, EventArgs e)
         {
-            /*if (dataGridView_patient_info.SelectedRows.Count != 1)
+            int count_row = dataGridView_patient_info.RowCount;
+            int select_count = 0;
+            for (int i = 0; i < count_row; i++)
             {
-                MessageBox.Show("请选择一条病人以修改");
-                return;
-            }*/
-            int inx = dataGridView_patient_info.CurrentRow.Index;
-            string id = dataGridView_patient_info.Rows[inx].Cells["patient_id"].Value.ToString();
-            patient_state_modify paient_state_modify_form = new patient_state_modify(inx,id);
-            paient_state_modify_form.Show();
+                DataGridViewCheckBoxCell checkCell = new DataGridViewCheckBoxCell();
+                checkCell = (DataGridViewCheckBoxCell)dataGridView_patient_info.Rows[i].Cells["patient_id_check_box"];
+                Boolean flag = Convert.ToBoolean(checkCell.Value);
+                if (flag == true)
+                    select_count++;
+                
+            }
+            if(select_count!=1)
+            { MessageBox.Show("请选择一条数据进行修改");
+                return; 
+            }
+            for (int i = 0; i < count_row; i++)
+            {
+                DataGridViewCheckBoxCell checkCell = new DataGridViewCheckBoxCell();
+                checkCell = (DataGridViewCheckBoxCell)dataGridView_patient_info.Rows[i].Cells["patient_id_check_box"];
+                Boolean flag = Convert.ToBoolean(checkCell.Value);
+                if (flag == true)
+                {
+                    string patient_id, illness, operation, advice;
+                    patient_id = dataGridView_patient_info.Rows[i].Cells["patient_id_col"].Value.ToString();
+                    illness = dataGridView_patient_info.Rows[i].Cells["ill_con_col"].Value.ToString();
+                    operation = dataGridView_patient_info.Rows[i].Cells["need_operation_col"].Value.ToString();
+                    advice = dataGridView_patient_info.Rows[i].Cells["advice_col"].Value.ToString();
+                    patient_state_modify psm =new patient_state_modify(doctor_id,patient_id,illness,operation,advice);
+                    psm.Show();                 
+                }
+            }
+
+           
         }
 
         private void prescribeButton_Click(object sender, EventArgs e)
         {
-           /* if (dataGridView_patient_info.SelectedRows.Count != 1)
-            {
-                MessageBox.Show("请选择一条病人以修改");
-                return;
-            }*/
-            int inx = dataGridView_patient_info.CurrentRow.Index;
-            string id = dataGridView_patient_info.Rows[inx].Cells["patient_id"].Value.ToString();
-            prescribe_add prescribe_add_form = new prescribe_add(inx,id);
-            prescribe_add_form.Show();
-        }
 
-       
+            int count_row = dataGridView_patient_info.RowCount;
+            int select_count = 0;
+            for (int i = 0; i < count_row; i++)
+            {
+                DataGridViewCheckBoxCell checkCell = new DataGridViewCheckBoxCell();
+                checkCell = (DataGridViewCheckBoxCell)dataGridView_patient_info.Rows[i].Cells["patient_id_check_box"];
+                Boolean flag = Convert.ToBoolean(checkCell.Value);
+                if (flag == true)
+                    select_count++;
+
+            }
+            if (select_count != 1)
+            {
+                MessageBox.Show("请选择一条数据的病人，为他开药");
+                return;
+            }
+            for (int i = 0; i < count_row; i++)
+            {
+                DataGridViewCheckBoxCell checkCell = new DataGridViewCheckBoxCell();
+                checkCell = (DataGridViewCheckBoxCell)dataGridView_patient_info.Rows[i].Cells["patient_id_check_box"];
+                Boolean flag = Convert.ToBoolean(checkCell.Value);
+                if (flag == true)
+                {
+                    string patient_id;
+                    patient_id = dataGridView_patient_info.Rows[i].Cells["patient_id_col"].Value.ToString();
+                    prescribe_add pad = new prescribe_add(patient_id,doctor_id);
+                    pad.Show();
+                }
+            }
+        }       
     }
 }

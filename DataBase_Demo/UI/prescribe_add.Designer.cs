@@ -31,12 +31,12 @@ namespace DataBase_Demo
         {
             this.confirmButton = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.Button();
-            this.medicineIdTextBox = new System.Windows.Forms.TextBox();
-            this.medicineIdLabel = new System.Windows.Forms.Label();
             this.medicineNameLabel = new System.Windows.Forms.Label();
-            this.medicineNameTextBox = new System.Windows.Forms.TextBox();
             this.unitLabel = new System.Windows.Forms.Label();
             this.unitTextBox = new System.Windows.Forms.TextBox();
+            this.medicineNameComboBox = new System.Windows.Forms.ComboBox();
+            this.doseLabel = new System.Windows.Forms.Label();
+            this.doseComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // confirmButton
@@ -47,6 +47,7 @@ namespace DataBase_Demo
             this.confirmButton.TabIndex = 0;
             this.confirmButton.Text = "提交";
             this.confirmButton.UseVisualStyleBackColor = true;
+            this.confirmButton.Click += new System.EventHandler(this.confirmButton_Click);
             // 
             // backButton
             // 
@@ -58,22 +59,6 @@ namespace DataBase_Demo
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
-            // medicineIdTextBox
-            // 
-            this.medicineIdTextBox.Location = new System.Drawing.Point(230, 56);
-            this.medicineIdTextBox.Name = "medicineIdTextBox";
-            this.medicineIdTextBox.Size = new System.Drawing.Size(290, 25);
-            this.medicineIdTextBox.TabIndex = 2;
-            // 
-            // medicineIdLabel
-            // 
-            this.medicineIdLabel.AutoSize = true;
-            this.medicineIdLabel.Location = new System.Drawing.Point(122, 66);
-            this.medicineIdLabel.Name = "medicineIdLabel";
-            this.medicineIdLabel.Size = new System.Drawing.Size(67, 15);
-            this.medicineIdLabel.TabIndex = 3;
-            this.medicineIdLabel.Text = "药品编号";
-            // 
             // medicineNameLabel
             // 
             this.medicineNameLabel.AutoSize = true;
@@ -83,40 +68,70 @@ namespace DataBase_Demo
             this.medicineNameLabel.TabIndex = 4;
             this.medicineNameLabel.Text = "药品名称";
             // 
-            // medicineNameTextBox
-            // 
-            this.medicineNameTextBox.Location = new System.Drawing.Point(231, 124);
-            this.medicineNameTextBox.Name = "medicineNameTextBox";
-            this.medicineNameTextBox.Size = new System.Drawing.Size(289, 25);
-            this.medicineNameTextBox.TabIndex = 5;
-            // 
             // unitLabel
             // 
             this.unitLabel.AutoSize = true;
             this.unitLabel.Location = new System.Drawing.Point(120, 184);
             this.unitLabel.Name = "unitLabel";
-            this.unitLabel.Size = new System.Drawing.Size(67, 15);
+            this.unitLabel.Size = new System.Drawing.Size(37, 15);
             this.unitLabel.TabIndex = 6;
-            this.unitLabel.Text = "数量单位";
+            this.unitLabel.Text = "数量";
             // 
             // unitTextBox
             // 
             this.unitTextBox.Location = new System.Drawing.Point(230, 181);
+            this.unitTextBox.MaxLength = 4;
             this.unitTextBox.Name = "unitTextBox";
             this.unitTextBox.Size = new System.Drawing.Size(290, 25);
             this.unitTextBox.TabIndex = 7;
+            // 
+            // medicineNameComboBox
+            // 
+            this.medicineNameComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.medicineNameComboBox.FormattingEnabled = true;
+            this.medicineNameComboBox.Items.AddRange(new object[] {
+            "almighty pills"});
+            this.medicineNameComboBox.Location = new System.Drawing.Point(230, 124);
+            this.medicineNameComboBox.Name = "medicineNameComboBox";
+            this.medicineNameComboBox.Size = new System.Drawing.Size(290, 23);
+            this.medicineNameComboBox.TabIndex = 8;
+            // 
+            // doseLabel
+            // 
+            this.doseLabel.AutoSize = true;
+            this.doseLabel.Location = new System.Drawing.Point(128, 240);
+            this.doseLabel.Name = "doseLabel";
+            this.doseLabel.Size = new System.Drawing.Size(37, 15);
+            this.doseLabel.TabIndex = 9;
+            this.doseLabel.Text = "单位";
+            // 
+            // doseComboBox
+            // 
+            this.doseComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.doseComboBox.FormattingEnabled = true;
+            this.doseComboBox.Items.AddRange(new object[] {
+            "盒",
+            "片",
+            "瓶",
+            "支",
+            "粒",
+            "颗"});
+            this.doseComboBox.Location = new System.Drawing.Point(230, 242);
+            this.doseComboBox.Name = "doseComboBox";
+            this.doseComboBox.Size = new System.Drawing.Size(290, 23);
+            this.doseComboBox.TabIndex = 10;
             // 
             // prescribe_add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.doseComboBox);
+            this.Controls.Add(this.doseLabel);
+            this.Controls.Add(this.medicineNameComboBox);
             this.Controls.Add(this.unitTextBox);
             this.Controls.Add(this.unitLabel);
-            this.Controls.Add(this.medicineNameTextBox);
             this.Controls.Add(this.medicineNameLabel);
-            this.Controls.Add(this.medicineIdLabel);
-            this.Controls.Add(this.medicineIdTextBox);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.confirmButton);
             this.Name = "prescribe_add";
@@ -131,11 +146,11 @@ namespace DataBase_Demo
 
         private System.Windows.Forms.Button confirmButton;
         private System.Windows.Forms.Button backButton;
-        private System.Windows.Forms.TextBox medicineIdTextBox;
-        private System.Windows.Forms.Label medicineIdLabel;
         private System.Windows.Forms.Label medicineNameLabel;
-        private System.Windows.Forms.TextBox medicineNameTextBox;
         private System.Windows.Forms.Label unitLabel;
         private System.Windows.Forms.TextBox unitTextBox;
+        private System.Windows.Forms.ComboBox medicineNameComboBox;
+        private System.Windows.Forms.Label doseLabel;
+        private System.Windows.Forms.ComboBox doseComboBox;
     }
 }

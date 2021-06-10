@@ -33,10 +33,10 @@ namespace DataBase_Demo
             this.illnessTextBox = new System.Windows.Forms.TextBox();
             this.illnessCondition = new System.Windows.Forms.Label();
             this.needOperation = new System.Windows.Forms.Label();
-            this.needOperationTextBox = new System.Windows.Forms.TextBox();
             this.adviceTextBox = new System.Windows.Forms.TextBox();
             this.advice = new System.Windows.Forms.Label();
             this.backButton = new System.Windows.Forms.Button();
+            this.needOperationComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // modifyButton
@@ -47,10 +47,12 @@ namespace DataBase_Demo
             this.modifyButton.TabIndex = 0;
             this.modifyButton.Text = "提交修改";
             this.modifyButton.UseVisualStyleBackColor = true;
+            this.modifyButton.Click += new System.EventHandler(this.modifyButton_Click);
             // 
             // illnessTextBox
             // 
             this.illnessTextBox.Location = new System.Drawing.Point(301, 107);
+            this.illnessTextBox.MaxLength = 600;
             this.illnessTextBox.Name = "illnessTextBox";
             this.illnessTextBox.Size = new System.Drawing.Size(288, 25);
             this.illnessTextBox.TabIndex = 1;
@@ -73,16 +75,10 @@ namespace DataBase_Demo
             this.needOperation.TabIndex = 3;
             this.needOperation.Text = "是否需要手术";
             // 
-            // needOperationTextBox
-            // 
-            this.needOperationTextBox.Location = new System.Drawing.Point(301, 158);
-            this.needOperationTextBox.Name = "needOperationTextBox";
-            this.needOperationTextBox.Size = new System.Drawing.Size(288, 25);
-            this.needOperationTextBox.TabIndex = 4;
-            // 
             // adviceTextBox
             // 
             this.adviceTextBox.Location = new System.Drawing.Point(301, 213);
+            this.adviceTextBox.MaxLength = 420;
             this.adviceTextBox.Name = "adviceTextBox";
             this.adviceTextBox.Size = new System.Drawing.Size(288, 25);
             this.adviceTextBox.TabIndex = 5;
@@ -106,15 +102,27 @@ namespace DataBase_Demo
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
+            // needOperationComboBox
+            // 
+            this.needOperationComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.needOperationComboBox.FormattingEnabled = true;
+            this.needOperationComboBox.Items.AddRange(new object[] {
+            "是",
+            "否"});
+            this.needOperationComboBox.Location = new System.Drawing.Point(301, 161);
+            this.needOperationComboBox.Name = "needOperationComboBox";
+            this.needOperationComboBox.Size = new System.Drawing.Size(288, 23);
+            this.needOperationComboBox.TabIndex = 8;
+            // 
             // patient_state_modify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.needOperationComboBox);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.advice);
             this.Controls.Add(this.adviceTextBox);
-            this.Controls.Add(this.needOperationTextBox);
             this.Controls.Add(this.needOperation);
             this.Controls.Add(this.illnessCondition);
             this.Controls.Add(this.illnessTextBox);
@@ -133,9 +141,9 @@ namespace DataBase_Demo
         private System.Windows.Forms.TextBox illnessTextBox;
         private System.Windows.Forms.Label illnessCondition;
         private System.Windows.Forms.Label needOperation;
-        private System.Windows.Forms.TextBox needOperationTextBox;
         private System.Windows.Forms.TextBox adviceTextBox;
         private System.Windows.Forms.Label advice;
         private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.ComboBox needOperationComboBox;
     }
 }

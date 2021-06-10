@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Windows.Forms;
 
-//第二层
+//业务逻辑
 namespace DataBase_Demo
 {
-   public class doctor_admin
+    public class doctor_admin
     {
-        doctor_admin_query dcquery = new doctor_admin_query();        
+        doctor_admin_query dcquery = new doctor_admin_query();
         public OracleDataAdapter get_doc_info(string id)
         {
             return dcquery.get_doc_info_query(id);
@@ -23,9 +23,9 @@ namespace DataBase_Demo
         }
         public OracleDataAdapter modify_patient_state(string id)
         {
-            return dcquery.modify_patient_state_query( id);
+            return dcquery.modify_patient_state_query(id);
         }
-        public bool login(string id,string passwd)
+        public bool login(string id, string passwd)
         {
             try
             {
@@ -66,6 +66,27 @@ namespace DataBase_Demo
         public OracleDataAdapter get_oper_info(string id)
         {
             return dcquery.get_oper_info_query(id);
+        }
+        public void patient_state_modify(string doctor_id,string patient_id, string Illness, string NeedOp, string Advice)
+        {
+            //dcquery.patient_state_delete(patient_id);
+            dcquery.patient_state_add(doctor_id, patient_id,  Illness,  NeedOp,  Advice);
+        }
+        public void prescribe_add(string doctor_id,string patient_id, string medicineId,string medicineDose,string medicineUnit)
+        {
+            dcquery.prescribe_add(doctor_id, patient_id, medicineId,medicineDose, medicineUnit);
+        }
+        public string get_medicine_id(string medicineName)
+        {
+
+            DataSet ds = new DataSet();
+            OracleDataAdapter adapt_x = new OracleDataAdapter();
+            adapt_x = dcquery.get_meidcine_id_query(medicineName);
+            adapt_x.Fill(ds, "medicine_id");
+           
+            DataTable temp = ds.Tables["medicine_id"];
+            DataRow row = temp.Rows[0];
+            return  row["medicine_id"].ToString();
         }
     }
 }
