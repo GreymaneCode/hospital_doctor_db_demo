@@ -13,19 +13,40 @@ namespace DataBase_Demo
 {
     public partial class operationSchedule_info : Form
     {
-        public operationSchedule_info()
+        doctor_admin dcad = new doctor_admin();
+        string doctor_id = string.Empty;
+
+        public operationSchedule_info(string inputId)
         {
             InitializeComponent();
+            doctor_id = inputId;
+            displayOperScheInfo(doctor_id);
         }
 
-        public operationSchedule_info(OracleDataAdapter adapter)
+        private void displayOperScheInfo(string id)
         {
-            InitializeComponent();
             try
             {
                 DataSet ds = new DataSet();
-                adapter.Fill(ds, "operscheinfo");
-                dataGridView_operation_info.DataSource = ds.Tables["operscheinfo"];
+                OracleDataAdapter adapt_x = new OracleDataAdapter();
+                adapt_x = dcad.get_oper_info(id,1);
+                adapt_x.Fill(ds, "OPERSCHE_INFO");
+                dataGridView_operation_info.DataSource = ds.Tables["OPERSCHE_INFO"];
+                int rowcount = dataGridView_operation_info.Rows.Count;
+                for (int k = 0; k < rowcount; k++)
+                {
+                    string str= string.Empty;
+                    str = dataGridView_operation_info.Rows[k].Cells["op_sec_id_col"].Value.ToString();
+                    if (str == "1") 
+                        dataGridView_operation_info.Rows[k].Cells["op_sec_id_col"].Value = "8:00-10:00";
+                    if (str == "2") 
+                        dataGridView_operation_info.Rows[k].Cells["op_sec_id_col"].Value = "10:00-12:00";
+                    if (str == "3") 
+                        dataGridView_operation_info.Rows[k].Cells["op_sec_id_col"].Value = "13:00-15:00";
+                    if (str == "4") 
+                        dataGridView_operation_info.Rows[k].Cells["op_sec_id_col"].Value = "15:00-17:00";
+                }
+
             }
             catch (OracleException ex)
             {
@@ -33,14 +54,11 @@ namespace DataBase_Demo
                 throw new Exception(ex.Message);
             }
         }
-
-        
-
+           
         private void backButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-      
     }
 }

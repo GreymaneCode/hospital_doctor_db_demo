@@ -53,6 +53,8 @@ namespace DataBase_Demo
                 dcad.patient_state_modify(doctor_id,patient_id,inputIllness,inputNeedOp,inputAdvice);
             MessageBox.Show("修改成功，结果已保存");
             this.Close();
+            patient_info temp = new patient_info(doctor_id);
+            temp.Show();
         }
     }
 }

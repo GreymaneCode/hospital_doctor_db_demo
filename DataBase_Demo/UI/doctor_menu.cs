@@ -27,23 +27,24 @@ namespace DataBase_Demo
             doctor_info_form.Show();
         }
 
-        private void operationScheduleButton_Click(object sender, EventArgs e)
-        {
-            //查看手术安排
-            string current_time = DateTime.Now.ToString("yyyy-mm-dd");
-            operationSchedule_info operation_info_form = new operationSchedule_info(displayOperScheInfo(inputID));//, current_time));
-            operation_info_form.Show();
-        }
-
         private void patientInfoButton_Click(object sender, EventArgs e)
         {
             patient_info patient_info_form = new patient_info(inputID);
             patient_info_form.Show();
         }
 
+        private void operationScheduleButton_Click(object sender, EventArgs e)
+        {
+            //查看手术安排          
+            operationSchedule_info operation_info_form = new operationSchedule_info(inputID);
+            operation_info_form.Show();
+        }
+   
         private void operationReportButton_Click(object sender, EventArgs e)
         {
-
+            //上传手术报告
+            operation_info oper_info_form = new operation_info(inputID);
+            oper_info_form.Show();
         }
 
      
@@ -54,21 +55,6 @@ namespace DataBase_Demo
             Application.Exit();
         }
 
-        private OracleDataAdapter displayOperScheInfo(string id)//,string current_time)
-        {
-            try
-            {
-                DataSet ds = new DataSet();
-                OracleDataAdapter adapt_x = new OracleDataAdapter();
-                adapt_x = dcad.get_oper_info(id);//, current_time);
-                adapt_x.Fill(ds, "OPERSCHE_INFO");
-                return adapt_x;
-            }
-            catch (OracleException ex)
-            {
-                MessageBox.Show(ex.Message);
-                throw new Exception(ex.Message);
-            }
-        }
+        
     }
 }

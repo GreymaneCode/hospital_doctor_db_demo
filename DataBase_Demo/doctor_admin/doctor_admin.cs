@@ -63,9 +63,9 @@ namespace DataBase_Demo
             }
         }
 
-        public OracleDataAdapter get_oper_info(string id)
+        public OracleDataAdapter get_oper_info(string id,int choice)
         {
-            return dcquery.get_oper_info_query(id);
+            return dcquery.get_oper_info_query(id,choice);
         }
         public void patient_state_modify(string doctor_id,string patient_id, string Illness, string NeedOp, string Advice)
         {
@@ -87,6 +87,26 @@ namespace DataBase_Demo
             DataTable temp = ds.Tables["medicine_id"];
             DataRow row = temp.Rows[0];
             return  row["medicine_id"].ToString();
+        }
+
+        public void oper_report_add(string doctor_id, string oper_id, string reporttext)
+        {          
+            dcquery.operreport_add(doctor_id, oper_id, reporttext);
+        }
+
+        public OracleDataAdapter get_report(string oper_id)
+        {
+            return dcquery.get_report_query(oper_id);
+        }
+
+        public void delete_report(string oper_id)
+        {
+            dcquery.delete_report(oper_id);
+        }
+
+        public int get_report_num(string oper_id)
+        {
+            return dcquery.get_report_num(oper_id);
         }
     }
 }

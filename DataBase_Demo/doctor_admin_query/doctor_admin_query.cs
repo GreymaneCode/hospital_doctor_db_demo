@@ -111,11 +111,15 @@ namespace DataBase_Demo
             }
         }
 
-        public OracleDataAdapter get_oper_info_query(string id)//,string current_time)
-        {
+        public OracleDataAdapter get_oper_info_query(string id,int choice)
+        {            
+            String current_time = string.Empty;
+            current_time = DateTime.Now.ToString("yyyy-MM-dd");
             String sql = string.Empty;
-
-            sql = "Select * From operation where doctor_id=:id ";// AND operation_date>to_timestamp('2012-07-28','yyyy-mm-dd')";
+            if (choice == 1)
+                sql = "select operation_id,operation_name,sec_id,patient_id,operation_date,patient_name From (operation natural join patient） where (doctor_id=:id AND operation_date>=to_timestamp('" + current_time + "','yyyy-mm-dd')) order by operation_date asc ";
+            else if(choice==2)
+                sql = "select operation_id,operation_name,sec_id,patient_id,operation_date,patient_name From (operation natural join patient） where (doctor_id=:id AND operation_date<to_timestamp('" + current_time + "','yyyy-mm-dd')) order by operation_date desc ";
             OracleCommand cmd = new OracleCommand(sql);
             cmd.Parameters.Add(new OracleParameter("id", id));
             // cmd.Parameters.Add(new OracleParameter("current_time", current_time));
@@ -259,5 +263,92 @@ namespace DataBase_Demo
             return to_ret;
         }
 
+        public void operreport_add(string doctor_id, string oper_id, string reporttext)
+        {
+            string nowTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss", DateTimeFormatInfo.InvariantInfo);
+            String sql = string.Empty;
+            sql = "insert into operation_report values (:doctor_id,:operation_id,:conclusion ,to_timestamp('" + nowTime + "', 'yyyy-mm-dd hh24:mi:ss'))";
+            OracleCommand cmd = new OracleCommand(sql);
+            
+            cmd.Parameters.Add(new OracleParameter("doctor_id", doctor_id));
+            cmd.Parameters.Add(new OracleParameter("operation_id", oper_id));
+            cmd.Parameters.Add(new OracleParameter("conclusion", reporttext));
+            
+            try
+            {
+                OracleDataAdapter adapt = new OracleDataAdapter();
+                dbutil.uniformed_insert(cmd);
+
+            }
+            catch (OracleException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public OracleDataAdapter get_report_query(string oper_id)
+        {
+            String sql = string.Empty;
+            sql = "select operation_id,conclusion,report_time from operation_report where operation_id =: oper_id";
+
+            OracleCommand cmd = new OracleCommand(sql);
+            cmd.Parameters.Add(new OracleParameter("oper_id", oper_id));
+            try
+            {
+                OracleDataAdapter adapt = new OracleDataAdapter();
+                adapt = dbutil.uniformed_query(cmd);                
+                return adapt;
+            }
+            catch (OracleException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void delete_report(string oper_id)
+        {
+            String sql = string.Empty;
+            sql = "delete from operation_report where operation_id =: oper_id";
+
+            OracleCommand cmd = new OracleCommand(sql);
+            cmd.Parameters.Add(new OracleParameter("oper_id", oper_id));
+            try
+            {
+                OracleDataAdapter adapt = new OracleDataAdapter();
+                dbutil.uniformed_delete(cmd);
+                
+            }
+            catch (OracleException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public int get_report_num(string oper_id)
+        {
+            String sql = string.Empty;
+            sql = "select COUNT(operation_id) FROM operation_report where operation_id =: oper_id";
+
+            OracleCommand cmd = new OracleCommand(sql);
+            cmd.Parameters.Add(new OracleParameter("oper_id", oper_id));
+            try
+            {
+                OracleDataAdapter adapt = new OracleDataAdapter();
+                adapt = dbutil.uniformed_query(cmd);               
+
+                DataSet ds = new DataSet();
+
+                adapt.Fill(ds, "report_num");
+
+                DataTable temp = ds.Tables["report_num"];
+                int rownum = temp.Rows.Count;
+                
+                return rownum;
+            }
+            catch (OracleException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

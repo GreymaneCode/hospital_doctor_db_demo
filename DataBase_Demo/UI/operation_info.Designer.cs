@@ -1,6 +1,6 @@
 ﻿namespace DataBase_Demo
 {
-    partial class operationSchedule_info
+    partial class operation_info
     {
         /// <summary>
         /// Required designer variable.
@@ -28,50 +28,67 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.dataGridView_oper_info = new System.Windows.Forms.DataGridView();
             this.backButton = new System.Windows.Forms.Button();
-            this.dataGridView_operation_info = new System.Windows.Forms.DataGridView();
+            this.addreportbutton = new System.Windows.Forms.Button();
+            this.reportcheckbox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.operation_id_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.op_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.operation_name_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patient_id_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patient_name_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.op_sec_id_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.op_date_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_operation_info)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_oper_info)).BeginInit();
             this.SuspendLayout();
             // 
-            // backButton
+            // dataGridView_oper_info
             // 
-            this.backButton.Location = new System.Drawing.Point(492, 440);
-            this.backButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(182, 74);
-            this.backButton.TabIndex = 0;
-            this.backButton.Text = "返回";
-            this.backButton.UseVisualStyleBackColor = true;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
-            // 
-            // dataGridView_operation_info
-            // 
-            this.dataGridView_operation_info.AllowUserToAddRows = false;
-            this.dataGridView_operation_info.AllowUserToDeleteRows = false;
-            this.dataGridView_operation_info.AllowUserToResizeColumns = false;
-            this.dataGridView_operation_info.AllowUserToResizeRows = false;
-            this.dataGridView_operation_info.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_operation_info.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridView_oper_info.AllowUserToAddRows = false;
+            this.dataGridView_oper_info.AllowUserToDeleteRows = false;
+            this.dataGridView_oper_info.AllowUserToResizeColumns = false;
+            this.dataGridView_oper_info.AllowUserToResizeRows = false;
+            this.dataGridView_oper_info.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_oper_info.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.reportcheckbox,
             this.operation_id_col,
-            this.op_,
+            this.operation_name_col,
             this.patient_id_col,
             this.patient_name_col,
             this.op_sec_id_col,
             this.op_date_col});
-            this.dataGridView_operation_info.Location = new System.Drawing.Point(90, 37);
-            this.dataGridView_operation_info.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView_operation_info.Name = "dataGridView_operation_info";
-            this.dataGridView_operation_info.RowHeadersVisible = false;
-            this.dataGridView_operation_info.RowHeadersWidth = 62;
-            this.dataGridView_operation_info.RowTemplate.Height = 30;
-            this.dataGridView_operation_info.Size = new System.Drawing.Size(1056, 316);
-            this.dataGridView_operation_info.TabIndex = 1;
+            this.dataGridView_oper_info.Location = new System.Drawing.Point(33, 27);
+            this.dataGridView_oper_info.Name = "dataGridView_oper_info";
+            this.dataGridView_oper_info.RowHeadersVisible = false;
+            this.dataGridView_oper_info.RowHeadersWidth = 62;
+            this.dataGridView_oper_info.RowTemplate.Height = 30;
+            this.dataGridView_oper_info.Size = new System.Drawing.Size(1014, 486);
+            this.dataGridView_oper_info.TabIndex = 0;
+            // 
+            // backButton
+            // 
+            this.backButton.Location = new System.Drawing.Point(237, 400);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(172, 65);
+            this.backButton.TabIndex = 1;
+            this.backButton.Text = "返回";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
+            // addreportbutton
+            // 
+            this.addreportbutton.Location = new System.Drawing.Point(654, 400);
+            this.addreportbutton.Name = "addreportbutton";
+            this.addreportbutton.Size = new System.Drawing.Size(177, 65);
+            this.addreportbutton.TabIndex = 2;
+            this.addreportbutton.Text = "添加报告";
+            this.addreportbutton.UseVisualStyleBackColor = true;
+            this.addreportbutton.Click += new System.EventHandler(this.addreportbutton_Click);
+            // 
+            // reportcheckbox
+            // 
+            this.reportcheckbox.HeaderText = "选择";
+            this.reportcheckbox.MinimumWidth = 8;
+            this.reportcheckbox.Name = "reportcheckbox";
             // 
             // operation_id_col
             // 
@@ -82,14 +99,14 @@
             this.operation_id_col.ReadOnly = true;
             this.operation_id_col.Width = 125;
             // 
-            // op_
+            // operation_name_col
             // 
-            this.op_.DataPropertyName = "operation_name";
-            this.op_.HeaderText = "手术名称";
-            this.op_.MinimumWidth = 6;
-            this.op_.Name = "op_";
-            this.op_.ReadOnly = true;
-            this.op_.Width = 125;
+            this.operation_name_col.DataPropertyName = "operation_name";
+            this.operation_name_col.HeaderText = "手术名称";
+            this.operation_name_col.MinimumWidth = 6;
+            this.operation_name_col.Name = "operation_name_col";
+            this.operation_name_col.ReadOnly = true;
+            this.operation_name_col.Width = 125;
             // 
             // patient_id_col
             // 
@@ -127,27 +144,29 @@
             this.op_date_col.ReadOnly = true;
             this.op_date_col.Width = 125;
             // 
-            // operationSchedule_info
+            // operation_info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1191, 584);
-            this.Controls.Add(this.dataGridView_operation_info);
+            this.ClientSize = new System.Drawing.Size(1093, 638);
+            this.Controls.Add(this.addreportbutton);
             this.Controls.Add(this.backButton);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "operationSchedule_info";
-            this.Text = "手术日程安排";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_operation_info)).EndInit();
+            this.Controls.Add(this.dataGridView_oper_info);
+            this.Name = "operation_info";
+            this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_oper_info)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private System.Windows.Forms.DataGridView dataGridView_oper_info;
         private System.Windows.Forms.Button backButton;
-        private System.Windows.Forms.DataGridView dataGridView_operation_info;
+        private System.Windows.Forms.Button addreportbutton;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn reportcheckbox;
         private System.Windows.Forms.DataGridViewTextBoxColumn operation_id_col;
-        private System.Windows.Forms.DataGridViewTextBoxColumn op_;
+        private System.Windows.Forms.DataGridViewTextBoxColumn operation_name_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn patient_id_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn patient_name_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn op_sec_id_col;

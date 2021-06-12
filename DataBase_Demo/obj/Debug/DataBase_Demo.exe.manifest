@@ -54,14 +54,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataBase_Demo.exe" size="37368">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataBase_Demo.exe" size="591352">
       <assemblyIdentity name="DataBase_Demo" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>YmnFJeUNDvCYmg64bYc++9o4esWi6SpOhuPQWSAwRH4=</dsig:DigestValue>
+        <dsig:DigestValue>M0jahbQiGQkjG5oIA6s3JAdyKSnfPAPPnK94XJ7C+w8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Oracle.DataAccess.dll" size="1847296">
+      <assemblyIdentity name="Oracle.DataAccess" version="2.122.19.1" publicKeyToken="89B483F429C47342" language="neutral" processorArchitecture="amd64" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>LyjLk8Hc2mJaGlhQmpwQs/Tax7zqT72yxLPuV2hlPDs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -125,13 +137,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="DataBase_Demo.exe.config" size="1888">
+  <file name="DataBase_Demo.exe.config" size="2121">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>xPt1P/jEZnAwqCv48boZMgETbqullasghuBFkGnxbuM=</dsig:DigestValue>
+      <dsig:DigestValue>HpQjRFi1L/6se3lf5mRtXXTQ20RlyHCTCNYPbsocSXE=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

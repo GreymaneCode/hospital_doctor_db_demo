@@ -56,21 +56,23 @@ namespace DataBase_Demo
             this.ill_con_col,
             this.need_operation_col,
             this.advice_col});
-            this.dataGridView_patient_info.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView_patient_info.Location = new System.Drawing.Point(18, 19);
+            this.dataGridView_patient_info.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView_patient_info.MultiSelect = false;
             this.dataGridView_patient_info.Name = "dataGridView_patient_info";
             this.dataGridView_patient_info.RowHeadersVisible = false;
             this.dataGridView_patient_info.RowHeadersWidth = 51;
             this.dataGridView_patient_info.RowTemplate.Height = 27;
             this.dataGridView_patient_info.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView_patient_info.Size = new System.Drawing.Size(776, 307);
+            this.dataGridView_patient_info.Size = new System.Drawing.Size(1164, 491);
             this.dataGridView_patient_info.TabIndex = 0;
             // 
             // backButton
             // 
-            this.backButton.Location = new System.Drawing.Point(589, 356);
+            this.backButton.Location = new System.Drawing.Point(884, 570);
+            this.backButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(120, 49);
+            this.backButton.Size = new System.Drawing.Size(180, 78);
             this.backButton.TabIndex = 1;
             this.backButton.Text = "返回";
             this.backButton.UseVisualStyleBackColor = true;
@@ -78,9 +80,10 @@ namespace DataBase_Demo
             // 
             // modifyButton
             // 
-            this.modifyButton.Location = new System.Drawing.Point(100, 356);
+            this.modifyButton.Location = new System.Drawing.Point(150, 570);
+            this.modifyButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.modifyButton.Name = "modifyButton";
-            this.modifyButton.Size = new System.Drawing.Size(120, 49);
+            this.modifyButton.Size = new System.Drawing.Size(180, 78);
             this.modifyButton.TabIndex = 2;
             this.modifyButton.Text = "修改";
             this.modifyButton.UseVisualStyleBackColor = true;
@@ -88,9 +91,10 @@ namespace DataBase_Demo
             // 
             // prescribeButton
             // 
-            this.prescribeButton.Location = new System.Drawing.Point(336, 357);
+            this.prescribeButton.Location = new System.Drawing.Point(504, 571);
+            this.prescribeButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.prescribeButton.Name = "prescribeButton";
-            this.prescribeButton.Size = new System.Drawing.Size(132, 46);
+            this.prescribeButton.Size = new System.Drawing.Size(198, 74);
             this.prescribeButton.TabIndex = 3;
             this.prescribeButton.Text = "开药";
             this.prescribeButton.UseVisualStyleBackColor = true;
@@ -153,15 +157,16 @@ namespace DataBase_Demo
             // 
             // patient_info
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1188, 682);
             this.Controls.Add(this.prescribeButton);
             this.Controls.Add(this.modifyButton);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.dataGridView_patient_info);
-            this.MaximumSize = new System.Drawing.Size(818, 497);
-            this.MinimumSize = new System.Drawing.Size(818, 497);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximumSize = new System.Drawing.Size(1214, 753);
+            this.MinimumSize = new System.Drawing.Size(1214, 753);
             this.Name = "patient_info";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "patient_info";

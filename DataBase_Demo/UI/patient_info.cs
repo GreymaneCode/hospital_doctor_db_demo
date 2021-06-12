@@ -85,8 +85,11 @@ namespace DataBase_Demo
                     illness = dataGridView_patient_info.Rows[i].Cells["ill_con_col"].Value.ToString();
                     operation = dataGridView_patient_info.Rows[i].Cells["need_operation_col"].Value.ToString();
                     advice = dataGridView_patient_info.Rows[i].Cells["advice_col"].Value.ToString();
+                    
                     patient_state_modify psm =new patient_state_modify(doctor_id,patient_id,illness,operation,advice);
-                    psm.Show();                 
+                    this.Close();
+                    psm.Show();
+                    
                 }
             }
 

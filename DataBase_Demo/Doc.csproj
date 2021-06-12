@@ -64,6 +64,10 @@
     <Reference Include="CSkin">
       <HintPath>G:\CSkin 16.1.14.3\CSkin 4.0\CSkin.dll</HintPath>
     </Reference>
+    <Reference Include="Oracle.DataAccess, Version=4.122.19.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\program files (x86)\microsoft visual studio\2019\community\common7\ide\extensions\mb1caqb4.zzj\Assemblies\DataProviders\Oracle.DataAccess.dll</HintPath>
+    </Reference>
     <Reference Include="Oracle.ManagedDataAccess, Version=4.122.19.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
       <HintPath>..\packages\Oracle.ManagedDataAccess.19.11.0\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
     </Reference>
@@ -73,8 +77,10 @@
       <HintPath>..\packages\System.Configuration.ConfigurationManager.5.0.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.OracleClient" />
     <Reference Include="System.Design" />
+    <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Net" />
     <Reference Include="System.Security" />
     <Reference Include="System.Security.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -101,6 +107,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="database_util\database_util.cs" />
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="UI\doctor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,11 +132,23 @@
     <Compile Include="UI\doctor_info.Designer.cs">
       <DependentUpon>doctor_info.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\operation_info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\operation_info.Designer.cs">
+      <DependentUpon>operation_info.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\operationSchedule_info.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\operationSchedule_info.Designer.cs">
       <DependentUpon>operationSchedule_info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\operation_report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\operation_report.Designer.cs">
+      <DependentUpon>operation_report.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\prescribe_add.cs">
       <SubType>Form</SubType>
@@ -159,6 +182,12 @@
     <EmbeddedResource Include="UI\operationSchedule_info.resx">
       <DependentUpon>operationSchedule_info.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\operation_info.resx">
+      <DependentUpon>operation_info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\operation_report.resx">
+      <DependentUpon>operation_report.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\patient_info.resx">
       <DependentUpon>patient_info.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,6 +207,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="DataBase_Demo_TemporaryKey.pfx" />
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
