@@ -72,10 +72,29 @@ namespace DataBase_Demo
                 throw new Exception(ex.Message);
             }
         }
-        public OracleDataAdapter get_patient_info_query(string id)
+        public OracleDataAdapter get_patient_info_query(string did,string pid)
         {
             String sql = string.Empty;
-            sql = "Select patient_id,state_time,illness_condition,need_operation,advice From patient_state where doctor_id=:id ";
+            sql = "Select patient_id,state_time,illness_condition,need_operation,advice From patient_state where doctor_id=:did and patient_id=: pid";
+            OracleCommand cmd = new OracleCommand(sql);
+            cmd.Parameters.Add(new OracleParameter("did", did));
+            cmd.Parameters.Add(new OracleParameter("pid", pid));
+
+            try
+            {
+                OracleDataAdapter adapt_doc_info = new OracleDataAdapter();
+                adapt_doc_info = dbutil.uniformed_query(cmd);
+                return adapt_doc_info;
+            }
+            catch (OracleException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public OracleDataAdapter get_patient_list_query(string id)
+        {
+            String sql = string.Empty;
+            sql = "Select patient_id,patient_name From (patient natural join patient_state) where doctor_id=:id ";
             OracleCommand cmd = new OracleCommand(sql);
             cmd.Parameters.Add(new OracleParameter("id", id));
 

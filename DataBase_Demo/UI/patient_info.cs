@@ -13,21 +13,25 @@ namespace DataBase_Demo
     public partial class patient_info : Form
     {
         doctor_admin dcad = new doctor_admin();
+        string detailed_content = string.Empty;
+        DetailedInfo curDetailedInfo = new DetailedInfo(string.Empty);
         string doctor_id = string.Empty;
-        public patient_info(string inputId)
+        string patient_id = string.Empty;
+        public patient_info(string did,string pid)
         {
             InitializeComponent();
-            doctor_id = inputId;
+            doctor_id = did;
+            patient_id = pid;
             Bool_To_Text(dataGridView_patient_info, "need_operation_col", "否", "0", "是", "1");
-            display(doctor_id);
+            display(doctor_id,patient_id);
         }
-        private void display(string id)
+        private void display(string did,string pid)
         {
             try
             {
                 DataSet ds = new DataSet();
                 OracleDataAdapter adapt_x = new OracleDataAdapter();
-                adapt_x = dcad.get_patient_info(id);
+                adapt_x = dcad.get_patient_info(did,pid);
                 adapt_x.Fill(ds, "t");
                 dataGridView_patient_info.DataSource = ds.Tables["t"];
             }
@@ -87,9 +91,9 @@ namespace DataBase_Demo
                     advice = dataGridView_patient_info.Rows[i].Cells["advice_col"].Value.ToString();
                     
                     patient_state_modify psm =new patient_state_modify(doctor_id,patient_id,illness,operation,advice);
-                    this.Close();
-                    psm.Show();
                     
+                    psm.Show();
+                    this.Hide();
                 }
             }
 
@@ -125,9 +129,23 @@ namespace DataBase_Demo
                     string patient_id;
                     patient_id = dataGridView_patient_info.Rows[i].Cells["patient_id_col"].Value.ToString();
                     prescribe_add pad = new prescribe_add(patient_id,doctor_id);
+                    
                     pad.Show();
+                    this.Hide();
                 }
             }
-        }       
+        }
+        private void dataGridView_patient_info_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            detailed_content = dataGridView_patient_info[e.ColumnIndex, e.RowIndex].Value.ToString();
+            curDetailedInfo = new DetailedInfo(detailed_content);
+            curDetailedInfo.Show();
+        }  
+
+
+
+  
+
+   
     }
 }

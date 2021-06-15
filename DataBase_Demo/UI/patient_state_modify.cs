@@ -36,6 +36,8 @@ namespace DataBase_Demo
         private void backButton_Click(object sender, EventArgs e)
         {
             this.Close();
+            patient_info temp = new patient_info(doctor_id,patient_id);
+            temp.Show();
         }
 
         private void modifyButton_Click(object sender, EventArgs e)
@@ -53,7 +55,7 @@ namespace DataBase_Demo
                 dcad.patient_state_modify(doctor_id,patient_id,inputIllness,inputNeedOp,inputAdvice);
             MessageBox.Show("修改成功，结果已保存");
             this.Close();
-            patient_info temp = new patient_info(doctor_id);
+            patient_info temp = new patient_info(doctor_id,patient_id);
             temp.Show();
         }
     }

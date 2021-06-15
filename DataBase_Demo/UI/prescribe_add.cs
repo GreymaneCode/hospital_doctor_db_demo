@@ -25,6 +25,8 @@ namespace DataBase_Demo
         private void backButton_Click(object sender, EventArgs e)
         {
             this.Close();
+            patient_info temp = new patient_info(doctor_id,patient_id);
+            temp.Show();
         }
 
         private void confirmButton_Click(object sender, EventArgs e)
@@ -42,6 +44,8 @@ namespace DataBase_Demo
             dcad.prescribe_add(doctor_id, patient_id , dcad.get_medicine_id(medicineName), medicineDose,medicineUnit);
             MessageBox.Show("开药成功，结果已保存");
             this.Close();
+            patient_info temp = new patient_info(doctor_id,patient_id);
+            temp.Show();
         }
 
        

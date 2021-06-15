@@ -30,15 +30,15 @@ namespace DataBase_Demo
         private void InitializeComponent()
         {
             this.dataGridView_patient_info = new System.Windows.Forms.DataGridView();
-            this.backButton = new System.Windows.Forms.Button();
-            this.modifyButton = new System.Windows.Forms.Button();
-            this.prescribeButton = new System.Windows.Forms.Button();
             this.patient_id_check_box = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.patient_id_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.state_time_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ill_con_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.need_operation_col = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.advice_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.backButton = new System.Windows.Forms.Button();
+            this.modifyButton = new System.Windows.Forms.Button();
+            this.prescribeButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_patient_info)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,48 +64,16 @@ namespace DataBase_Demo
             this.dataGridView_patient_info.RowHeadersWidth = 51;
             this.dataGridView_patient_info.RowTemplate.Height = 27;
             this.dataGridView_patient_info.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView_patient_info.Size = new System.Drawing.Size(1164, 491);
+            this.dataGridView_patient_info.Size = new System.Drawing.Size(1157, 457);
             this.dataGridView_patient_info.TabIndex = 0;
-            // 
-            // backButton
-            // 
-            this.backButton.Location = new System.Drawing.Point(884, 570);
-            this.backButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(180, 78);
-            this.backButton.TabIndex = 1;
-            this.backButton.Text = "返回";
-            this.backButton.UseVisualStyleBackColor = true;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
-            // 
-            // modifyButton
-            // 
-            this.modifyButton.Location = new System.Drawing.Point(150, 570);
-            this.modifyButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.modifyButton.Name = "modifyButton";
-            this.modifyButton.Size = new System.Drawing.Size(180, 78);
-            this.modifyButton.TabIndex = 2;
-            this.modifyButton.Text = "修改";
-            this.modifyButton.UseVisualStyleBackColor = true;
-            this.modifyButton.Click += new System.EventHandler(this.modifyButton_Click);
-            // 
-            // prescribeButton
-            // 
-            this.prescribeButton.Location = new System.Drawing.Point(504, 571);
-            this.prescribeButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.prescribeButton.Name = "prescribeButton";
-            this.prescribeButton.Size = new System.Drawing.Size(198, 74);
-            this.prescribeButton.TabIndex = 3;
-            this.prescribeButton.Text = "开药";
-            this.prescribeButton.UseVisualStyleBackColor = true;
-            this.prescribeButton.Click += new System.EventHandler(this.prescribeButton_Click);
+            this.dataGridView_patient_info.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_patient_info_CellContentDoubleClick);
             // 
             // patient_id_check_box
             // 
             this.patient_id_check_box.HeaderText = "选择";
             this.patient_id_check_box.MinimumWidth = 6;
             this.patient_id_check_box.Name = "patient_id_check_box";
-            this.patient_id_check_box.Width = 125;
+            this.patient_id_check_box.Width = 65;
             // 
             // patient_id_col
             // 
@@ -148,12 +116,46 @@ namespace DataBase_Demo
             // 
             // advice_col
             // 
+            this.advice_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.advice_col.DataPropertyName = "advice";
             this.advice_col.HeaderText = "医嘱";
             this.advice_col.MinimumWidth = 6;
             this.advice_col.Name = "advice_col";
             this.advice_col.ReadOnly = true;
-            this.advice_col.Width = 125;
+            this.advice_col.Width = 97;
+            // 
+            // backButton
+            // 
+            this.backButton.Location = new System.Drawing.Point(884, 570);
+            this.backButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(180, 78);
+            this.backButton.TabIndex = 1;
+            this.backButton.Text = "返回";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
+            // modifyButton
+            // 
+            this.modifyButton.Location = new System.Drawing.Point(150, 570);
+            this.modifyButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.modifyButton.Name = "modifyButton";
+            this.modifyButton.Size = new System.Drawing.Size(180, 78);
+            this.modifyButton.TabIndex = 2;
+            this.modifyButton.Text = "修改";
+            this.modifyButton.UseVisualStyleBackColor = true;
+            this.modifyButton.Click += new System.EventHandler(this.modifyButton_Click);
+            // 
+            // prescribeButton
+            // 
+            this.prescribeButton.Location = new System.Drawing.Point(504, 571);
+            this.prescribeButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.prescribeButton.Name = "prescribeButton";
+            this.prescribeButton.Size = new System.Drawing.Size(198, 74);
+            this.prescribeButton.TabIndex = 3;
+            this.prescribeButton.Text = "开药";
+            this.prescribeButton.UseVisualStyleBackColor = true;
+            this.prescribeButton.Click += new System.EventHandler(this.prescribeButton_Click);
             // 
             // patient_info
             // 

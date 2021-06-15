@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.dataGridView_oper_info = new System.Windows.Forms.DataGridView();
-            this.backButton = new System.Windows.Forms.Button();
-            this.addreportbutton = new System.Windows.Forms.Button();
             this.reportcheckbox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.operation_id_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.operation_name_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,6 +36,8 @@
             this.patient_name_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.op_sec_id_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.op_date_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.backButton = new System.Windows.Forms.Button();
+            this.addreportbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_oper_info)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,39 +56,21 @@
             this.patient_name_col,
             this.op_sec_id_col,
             this.op_date_col});
-            this.dataGridView_oper_info.Location = new System.Drawing.Point(33, 27);
+            this.dataGridView_oper_info.Location = new System.Drawing.Point(44, 36);
+            this.dataGridView_oper_info.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView_oper_info.Name = "dataGridView_oper_info";
             this.dataGridView_oper_info.RowHeadersVisible = false;
             this.dataGridView_oper_info.RowHeadersWidth = 62;
             this.dataGridView_oper_info.RowTemplate.Height = 30;
-            this.dataGridView_oper_info.Size = new System.Drawing.Size(1014, 486);
+            this.dataGridView_oper_info.Size = new System.Drawing.Size(1369, 468);
             this.dataGridView_oper_info.TabIndex = 0;
-            // 
-            // backButton
-            // 
-            this.backButton.Location = new System.Drawing.Point(237, 400);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(172, 65);
-            this.backButton.TabIndex = 1;
-            this.backButton.Text = "返回";
-            this.backButton.UseVisualStyleBackColor = true;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
-            // 
-            // addreportbutton
-            // 
-            this.addreportbutton.Location = new System.Drawing.Point(654, 400);
-            this.addreportbutton.Name = "addreportbutton";
-            this.addreportbutton.Size = new System.Drawing.Size(177, 65);
-            this.addreportbutton.TabIndex = 2;
-            this.addreportbutton.Text = "添加报告";
-            this.addreportbutton.UseVisualStyleBackColor = true;
-            this.addreportbutton.Click += new System.EventHandler(this.addreportbutton_Click);
             // 
             // reportcheckbox
             // 
             this.reportcheckbox.HeaderText = "选择";
             this.reportcheckbox.MinimumWidth = 8;
             this.reportcheckbox.Name = "reportcheckbox";
+            this.reportcheckbox.Width = 200;
             // 
             // operation_id_col
             // 
@@ -144,14 +126,37 @@
             this.op_date_col.ReadOnly = true;
             this.op_date_col.Width = 125;
             // 
+            // backButton
+            // 
+            this.backButton.Location = new System.Drawing.Point(316, 533);
+            this.backButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(229, 87);
+            this.backButton.TabIndex = 1;
+            this.backButton.Text = "返回";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
+            // addreportbutton
+            // 
+            this.addreportbutton.Location = new System.Drawing.Point(872, 533);
+            this.addreportbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addreportbutton.Name = "addreportbutton";
+            this.addreportbutton.Size = new System.Drawing.Size(236, 87);
+            this.addreportbutton.TabIndex = 2;
+            this.addreportbutton.Text = "添加报告";
+            this.addreportbutton.UseVisualStyleBackColor = true;
+            this.addreportbutton.Click += new System.EventHandler(this.addreportbutton_Click);
+            // 
             // operation_info
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1093, 638);
+            this.ClientSize = new System.Drawing.Size(1457, 851);
             this.Controls.Add(this.addreportbutton);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.dataGridView_oper_info);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "operation_info";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_oper_info)).EndInit();

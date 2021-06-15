@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
-
 namespace DataBase_Demo
 {
     public partial class doctor_menu : Form
@@ -29,8 +28,8 @@ namespace DataBase_Demo
 
         private void patientInfoButton_Click(object sender, EventArgs e)
         {
-            patient_info patient_info_form = new patient_info(inputID);
-            patient_info_form.Show();
+            patient_list patient_list_form = new patient_list(inputID);
+            patient_list_form.Show();
         }
 
         private void operationScheduleButton_Click(object sender, EventArgs e)
