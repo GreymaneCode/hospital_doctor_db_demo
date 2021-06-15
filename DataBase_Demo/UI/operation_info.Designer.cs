@@ -56,13 +56,13 @@
             this.patient_name_col,
             this.op_sec_id_col,
             this.op_date_col});
-            this.dataGridView_oper_info.Location = new System.Drawing.Point(44, 36);
-            this.dataGridView_oper_info.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView_oper_info.Location = new System.Drawing.Point(29, 22);
+            this.dataGridView_oper_info.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView_oper_info.Name = "dataGridView_oper_info";
             this.dataGridView_oper_info.RowHeadersVisible = false;
             this.dataGridView_oper_info.RowHeadersWidth = 62;
             this.dataGridView_oper_info.RowTemplate.Height = 30;
-            this.dataGridView_oper_info.Size = new System.Drawing.Size(1369, 468);
+            this.dataGridView_oper_info.Size = new System.Drawing.Size(913, 292);
             this.dataGridView_oper_info.TabIndex = 0;
             // 
             // reportcheckbox
@@ -128,10 +128,10 @@
             // 
             // backButton
             // 
-            this.backButton.Location = new System.Drawing.Point(316, 533);
-            this.backButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.backButton.Location = new System.Drawing.Point(211, 333);
+            this.backButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(229, 87);
+            this.backButton.Size = new System.Drawing.Size(153, 54);
             this.backButton.TabIndex = 1;
             this.backButton.Text = "返回";
             this.backButton.UseVisualStyleBackColor = true;
@@ -139,10 +139,10 @@
             // 
             // addreportbutton
             // 
-            this.addreportbutton.Location = new System.Drawing.Point(872, 533);
-            this.addreportbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addreportbutton.Location = new System.Drawing.Point(581, 333);
+            this.addreportbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addreportbutton.Name = "addreportbutton";
-            this.addreportbutton.Size = new System.Drawing.Size(236, 87);
+            this.addreportbutton.Size = new System.Drawing.Size(157, 54);
             this.addreportbutton.TabIndex = 2;
             this.addreportbutton.Text = "添加报告";
             this.addreportbutton.UseVisualStyleBackColor = true;
@@ -150,13 +150,13 @@
             // 
             // operation_info
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1457, 851);
+            this.ClientSize = new System.Drawing.Size(971, 532);
             this.Controls.Add(this.addreportbutton);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.dataGridView_oper_info);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "operation_info";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_oper_info)).EndInit();

@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework.Forms;
 
 namespace DataBase_Demo
 {
-    public partial class prescribe_add : Form
+    public partial class prescribe_add : MetroForm
     {
         string patient_id = string.Empty;
         string doctor_id = string.Empty;
@@ -22,29 +23,36 @@ namespace DataBase_Demo
             doctor_id = did;
         }
 
-        private void backButton_Click(object sender, EventArgs e)
+        private void skinButton_confirm_Click(object sender, EventArgs e)
         {
-            this.Close();
-            patient_info temp = new patient_info(doctor_id,patient_id);
-            temp.Show();
-        }
-
-        private void confirmButton_Click(object sender, EventArgs e)
-        {
-           
-            string medicineName = medicineNameComboBox.Text;
-            string medicineUnit = unitTextBox.Text;
-            string medicineDose = doseComboBox.Text;
-            if (medicineName == String.Empty || medicineUnit == String.Empty||medicineDose==string.Empty )
+            string medicineName = skinComboBox_medicine_name.Text;
+            string medicineUnit = skinTextBox_unit.Text;
+            string medicineDose = skinComboBox_dose.Text;
+            if (medicineName == String.Empty || medicineUnit == String.Empty || medicineDose == string.Empty)
             {
                 MessageBox.Show("必要的信息不能为空");
                 return;
             }
             doctor_admin dcad = new doctor_admin();
-            dcad.prescribe_add(doctor_id, patient_id , dcad.get_medicine_id(medicineName), medicineDose,medicineUnit);
-            MessageBox.Show("开药成功，结果已保存");
+
+            if (dcad.prescribe_add(doctor_id, patient_id, dcad.get_medicine_id(medicineName), medicineDose, medicineUnit))
+            {
+                MessageBox.Show("开药成功，结果已保存");
+                this.Close();
+                patient_list temp = new patient_list(doctor_id);
+                temp.Show();
+            }
+            else { MessageBox.Show("请输入1-1000的整数");
+                this.Close();
+                patient_list temp = new patient_list(doctor_id);
+                temp.Show();
+            }
+        }
+
+        private void skinButton_back_Click(object sender, EventArgs e)
+        {
             this.Close();
-            patient_info temp = new patient_info(doctor_id,patient_id);
+            patient_list temp = new patient_list(doctor_id);
             temp.Show();
         }
 

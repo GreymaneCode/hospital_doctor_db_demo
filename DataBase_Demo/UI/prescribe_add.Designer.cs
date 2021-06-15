@@ -29,128 +29,197 @@ namespace DataBase_Demo
         /// </summary>
         private void InitializeComponent()
         {
-            this.confirmButton = new System.Windows.Forms.Button();
-            this.backButton = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
             this.medicineNameLabel = new System.Windows.Forms.Label();
-            this.unitLabel = new System.Windows.Forms.Label();
-            this.unitTextBox = new System.Windows.Forms.TextBox();
-            this.medicineNameComboBox = new System.Windows.Forms.ComboBox();
-            this.doseLabel = new System.Windows.Forms.Label();
-            this.doseComboBox = new System.Windows.Forms.ComboBox();
+            this.skinButton_confirm = new CCWin.SkinControl.SkinButton();
+            this.skinButton_back = new CCWin.SkinControl.SkinButton();
+            this.skinComboBox_medicine_name = new CCWin.SkinControl.SkinComboBox();
+            this.skinComboBox_dose = new CCWin.SkinControl.SkinComboBox();
+            this.skinTextBox_unit = new CCWin.SkinControl.SkinTextBox();
+            this.skinLabel1 = new CCWin.SkinControl.SkinLabel();
+            this.skinLabel2 = new CCWin.SkinControl.SkinLabel();
+            this.skinLabel3 = new CCWin.SkinControl.SkinLabel();
             this.SuspendLayout();
-            // 
-            // confirmButton
-            // 
-            this.confirmButton.Location = new System.Drawing.Point(194, 347);
-            this.confirmButton.Name = "confirmButton";
-            this.confirmButton.Size = new System.Drawing.Size(126, 53);
-            this.confirmButton.TabIndex = 0;
-            this.confirmButton.Text = "提交";
-            this.confirmButton.UseVisualStyleBackColor = true;
-            this.confirmButton.Click += new System.EventHandler(this.confirmButton_Click);
-            // 
-            // backButton
-            // 
-            this.backButton.Location = new System.Drawing.Point(448, 347);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(126, 53);
-            this.backButton.TabIndex = 1;
-            this.backButton.Text = "返回";
-            this.backButton.UseVisualStyleBackColor = true;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // medicineNameLabel
             // 
             this.medicineNameLabel.AutoSize = true;
-            this.medicineNameLabel.Location = new System.Drawing.Point(120, 124);
+            this.medicineNameLabel.Location = new System.Drawing.Point(68, 71);
             this.medicineNameLabel.Name = "medicineNameLabel";
             this.medicineNameLabel.Size = new System.Drawing.Size(67, 15);
             this.medicineNameLabel.TabIndex = 4;
             this.medicineNameLabel.Text = "药品名称";
             // 
-            // unitLabel
+            // skinButton_confirm
             // 
-            this.unitLabel.AutoSize = true;
-            this.unitLabel.Location = new System.Drawing.Point(120, 184);
-            this.unitLabel.Name = "unitLabel";
-            this.unitLabel.Size = new System.Drawing.Size(37, 15);
-            this.unitLabel.TabIndex = 6;
-            this.unitLabel.Text = "数量";
+            this.skinButton_confirm.BackColor = System.Drawing.Color.Transparent;
+            this.skinButton_confirm.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.skinButton_confirm.DownBack = null;
+            this.skinButton_confirm.Location = new System.Drawing.Point(164, 338);
+            this.skinButton_confirm.MouseBack = null;
+            this.skinButton_confirm.Name = "skinButton_confirm";
+            this.skinButton_confirm.NormlBack = null;
+            this.skinButton_confirm.Size = new System.Drawing.Size(126, 64);
+            this.skinButton_confirm.TabIndex = 11;
+            this.skinButton_confirm.Text = "提交";
+            this.skinButton_confirm.UseVisualStyleBackColor = false;
+            this.skinButton_confirm.Click += new System.EventHandler(this.skinButton_confirm_Click);
             // 
-            // unitTextBox
+            // skinButton_back
             // 
-            this.unitTextBox.Location = new System.Drawing.Point(230, 181);
-            this.unitTextBox.MaxLength = 4;
-            this.unitTextBox.Name = "unitTextBox";
-            this.unitTextBox.Size = new System.Drawing.Size(290, 25);
-            this.unitTextBox.TabIndex = 7;
+            this.skinButton_back.BackColor = System.Drawing.Color.Transparent;
+            this.skinButton_back.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.skinButton_back.DownBack = null;
+            this.skinButton_back.Location = new System.Drawing.Point(455, 327);
+            this.skinButton_back.MouseBack = null;
+            this.skinButton_back.Name = "skinButton_back";
+            this.skinButton_back.NormlBack = null;
+            this.skinButton_back.Size = new System.Drawing.Size(126, 64);
+            this.skinButton_back.TabIndex = 12;
+            this.skinButton_back.Text = "返回";
+            this.skinButton_back.UseVisualStyleBackColor = false;
+            this.skinButton_back.Click += new System.EventHandler(this.skinButton_back_Click);
             // 
-            // medicineNameComboBox
+            // skinComboBox_medicine_name
             // 
-            this.medicineNameComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.medicineNameComboBox.FormattingEnabled = true;
-            this.medicineNameComboBox.Items.AddRange(new object[] {
+            this.skinComboBox_medicine_name.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.skinComboBox_medicine_name.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.skinComboBox_medicine_name.FormattingEnabled = true;
+            this.skinComboBox_medicine_name.Items.AddRange(new object[] {
             "almighty pills"});
-            this.medicineNameComboBox.Location = new System.Drawing.Point(230, 124);
-            this.medicineNameComboBox.Name = "medicineNameComboBox";
-            this.medicineNameComboBox.Size = new System.Drawing.Size(290, 23);
-            this.medicineNameComboBox.TabIndex = 8;
+            this.skinComboBox_medicine_name.Location = new System.Drawing.Point(198, 136);
+            this.skinComboBox_medicine_name.Name = "skinComboBox_medicine_name";
+            this.skinComboBox_medicine_name.Size = new System.Drawing.Size(396, 26);
+            this.skinComboBox_medicine_name.TabIndex = 13;
+            this.skinComboBox_medicine_name.WaterText = "";
             // 
-            // doseLabel
+            // skinComboBox_dose
             // 
-            this.doseLabel.AutoSize = true;
-            this.doseLabel.Location = new System.Drawing.Point(128, 240);
-            this.doseLabel.Name = "doseLabel";
-            this.doseLabel.Size = new System.Drawing.Size(37, 15);
-            this.doseLabel.TabIndex = 9;
-            this.doseLabel.Text = "单位";
-            // 
-            // doseComboBox
-            // 
-            this.doseComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.doseComboBox.FormattingEnabled = true;
-            this.doseComboBox.Items.AddRange(new object[] {
+            this.skinComboBox_dose.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.skinComboBox_dose.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.skinComboBox_dose.FormattingEnabled = true;
+            this.skinComboBox_dose.Items.AddRange(new object[] {
             "盒",
             "片",
             "瓶",
             "支",
             "粒",
             "颗"});
-            this.doseComboBox.Location = new System.Drawing.Point(230, 242);
-            this.doseComboBox.Name = "doseComboBox";
-            this.doseComboBox.Size = new System.Drawing.Size(290, 23);
-            this.doseComboBox.TabIndex = 10;
+            this.skinComboBox_dose.Location = new System.Drawing.Point(198, 240);
+            this.skinComboBox_dose.Name = "skinComboBox_dose";
+            this.skinComboBox_dose.Size = new System.Drawing.Size(396, 26);
+            this.skinComboBox_dose.TabIndex = 14;
+            this.skinComboBox_dose.WaterText = "";
+            // 
+            // skinTextBox_unit
+            // 
+            this.skinTextBox_unit.BackColor = System.Drawing.Color.Transparent;
+            this.skinTextBox_unit.DownBack = null;
+            this.skinTextBox_unit.Icon = null;
+            this.skinTextBox_unit.IconIsButton = false;
+            this.skinTextBox_unit.IconMouseState = CCWin.SkinClass.ControlState.Normal;
+            this.skinTextBox_unit.IsPasswordChat = '\0';
+            this.skinTextBox_unit.IsSystemPasswordChar = false;
+            this.skinTextBox_unit.Lines = new string[0];
+            this.skinTextBox_unit.Location = new System.Drawing.Point(198, 193);
+            this.skinTextBox_unit.Margin = new System.Windows.Forms.Padding(0);
+            this.skinTextBox_unit.MaxLength = 4;
+            this.skinTextBox_unit.MinimumSize = new System.Drawing.Size(28, 28);
+            this.skinTextBox_unit.MouseBack = null;
+            this.skinTextBox_unit.MouseState = CCWin.SkinClass.ControlState.Normal;
+            this.skinTextBox_unit.Multiline = true;
+            this.skinTextBox_unit.Name = "skinTextBox_unit";
+            this.skinTextBox_unit.NormlBack = null;
+            this.skinTextBox_unit.Padding = new System.Windows.Forms.Padding(5);
+            this.skinTextBox_unit.ReadOnly = false;
+            this.skinTextBox_unit.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.skinTextBox_unit.Size = new System.Drawing.Size(396, 29);
+            // 
+            // 
+            // 
+            this.skinTextBox_unit.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.skinTextBox_unit.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.skinTextBox_unit.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
+            this.skinTextBox_unit.SkinTxt.Location = new System.Drawing.Point(5, 5);
+            this.skinTextBox_unit.SkinTxt.Multiline = true;
+            this.skinTextBox_unit.SkinTxt.Name = "BaseText";
+            this.skinTextBox_unit.SkinTxt.Size = new System.Drawing.Size(386, 19);
+            this.skinTextBox_unit.SkinTxt.TabIndex = 0;
+            this.skinTextBox_unit.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.skinTextBox_unit.SkinTxt.WaterText = "";
+            this.skinTextBox_unit.TabIndex = 15;
+            this.skinTextBox_unit.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.skinTextBox_unit.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.skinTextBox_unit.WaterText = "";
+            this.skinTextBox_unit.WordWrap = true;
+            // 
+            // skinLabel1
+            // 
+            this.skinLabel1.AutoSize = true;
+            this.skinLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.skinLabel1.BorderColor = System.Drawing.Color.White;
+            this.skinLabel1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinLabel1.Location = new System.Drawing.Point(103, 136);
+            this.skinLabel1.Name = "skinLabel1";
+            this.skinLabel1.Size = new System.Drawing.Size(69, 20);
+            this.skinLabel1.TabIndex = 16;
+            this.skinLabel1.Text = "药物名称";
+            // 
+            // skinLabel2
+            // 
+            this.skinLabel2.AutoSize = true;
+            this.skinLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.skinLabel2.BorderColor = System.Drawing.Color.White;
+            this.skinLabel2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinLabel2.Location = new System.Drawing.Point(103, 193);
+            this.skinLabel2.Name = "skinLabel2";
+            this.skinLabel2.Size = new System.Drawing.Size(39, 20);
+            this.skinLabel2.TabIndex = 17;
+            this.skinLabel2.Text = "数量";
+            // 
+            // skinLabel3
+            // 
+            this.skinLabel3.AutoSize = true;
+            this.skinLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.skinLabel3.BorderColor = System.Drawing.Color.White;
+            this.skinLabel3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinLabel3.Location = new System.Drawing.Point(103, 246);
+            this.skinLabel3.Name = "skinLabel3";
+            this.skinLabel3.Size = new System.Drawing.Size(39, 20);
+            this.skinLabel3.TabIndex = 18;
+            this.skinLabel3.Text = "单位";
             // 
             // prescribe_add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.doseComboBox);
-            this.Controls.Add(this.doseLabel);
-            this.Controls.Add(this.medicineNameComboBox);
-            this.Controls.Add(this.unitTextBox);
-            this.Controls.Add(this.unitLabel);
+            this.Controls.Add(this.skinLabel3);
+            this.Controls.Add(this.skinLabel2);
+            this.Controls.Add(this.skinLabel1);
+            this.Controls.Add(this.skinTextBox_unit);
+            this.Controls.Add(this.skinComboBox_dose);
+            this.Controls.Add(this.skinComboBox_medicine_name);
+            this.Controls.Add(this.skinButton_back);
+            this.Controls.Add(this.skinButton_confirm);
             this.Controls.Add(this.medicineNameLabel);
-            this.Controls.Add(this.backButton);
-            this.Controls.Add(this.confirmButton);
             this.Name = "prescribe_add";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "prescribe_add";
+            this.Resizable = false;
+            this.Text = "开具药方";
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button confirmButton;
-        private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Label medicineNameLabel;
-        private System.Windows.Forms.Label unitLabel;
-        private System.Windows.Forms.TextBox unitTextBox;
-        private System.Windows.Forms.ComboBox medicineNameComboBox;
-        private System.Windows.Forms.Label doseLabel;
-        private System.Windows.Forms.ComboBox doseComboBox;
+        private CCWin.SkinControl.SkinButton skinButton_confirm;
+        private CCWin.SkinControl.SkinButton skinButton_back;
+        private CCWin.SkinControl.SkinComboBox skinComboBox_medicine_name;
+        private CCWin.SkinControl.SkinComboBox skinComboBox_dose;
+        private CCWin.SkinControl.SkinTextBox skinTextBox_unit;
+        private CCWin.SkinControl.SkinLabel skinLabel1;
+        private CCWin.SkinControl.SkinLabel skinLabel2;
+        private CCWin.SkinControl.SkinLabel skinLabel3;
     }
 }

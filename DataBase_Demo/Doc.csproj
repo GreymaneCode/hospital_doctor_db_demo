@@ -61,8 +61,17 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CSkin">
-      <HintPath>G:\CSkin 16.1.14.3\CSkin 4.0\CSkin.dll</HintPath>
+    <Reference Include="CSkin, Version=16.1.14.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\cskin.16.1.14.3\lib\net40\CSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
     </Reference>
     <Reference Include="Oracle.DataAccess, Version=4.122.19.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
@@ -111,6 +120,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UI\editPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\editPassword.Designer.cs">
+      <DependentUpon>editPassword.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\patient_list.cs">
       <SubType>Form</SubType>
@@ -174,14 +189,11 @@
     <Compile Include="UI\patient_state_modify.Designer.cs">
       <DependentUpon>patient_state_modify.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\patient_info.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\patient_info.Designer.cs">
-      <DependentUpon>patient_info.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="UI\editPassword.resx">
+      <DependentUpon>editPassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\patient_list.resx">
       <DependentUpon>patient_list.cs</DependentUpon>
     </EmbeddedResource>
@@ -205,9 +217,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\operation_report.resx">
       <DependentUpon>operation_report.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\patient_info.resx">
-      <DependentUpon>patient_info.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\patient_state_modify.resx">
       <DependentUpon>patient_state_modify.cs</DependentUpon>

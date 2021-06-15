@@ -13,6 +13,7 @@ namespace DataBase_Demo
     public class doctor_admin
     {
         doctor_admin_query dcquery = new doctor_admin_query();
+        field_judge _field_judge = new field_judge();
         public OracleDataAdapter get_doc_info(string id)
         {
             return dcquery.get_doc_info_query(id);
@@ -20,6 +21,11 @@ namespace DataBase_Demo
         public OracleDataAdapter get_patient_info(string doctor_id,string patient_id)
         {
             return dcquery.get_patient_info_query(doctor_id,patient_id);
+        }
+        public OracleDataAdapter get_prescribe(string doctor_id,string patient_id)
+        {
+            return dcquery.get_prescribe_query(doctor_id,patient_id);
+
         }
         public OracleDataAdapter get_patient_list(string id)
         {
@@ -73,12 +79,21 @@ namespace DataBase_Demo
         }
         public void patient_state_modify(string doctor_id,string patient_id, string Illness, string NeedOp, string Advice)
         {
-            //dcquery.patient_state_delete(patient_id);
             dcquery.patient_state_add(doctor_id, patient_id,  Illness,  NeedOp,  Advice);
         }
-        public void prescribe_add(string doctor_id,string patient_id, string medicineId,string medicineDose,string medicineUnit)
+        public bool prescribe_add(string doctor_id,string patient_id, string medicineId,string medicineDose,string medicineUnit)
         {
+            if (medicineUnit[0] <= '0' || medicineUnit[0] > '9')
+                return false;
+            else
+            {
+                for (int i = 0; i < medicineUnit.Length; i++)
+                {if (medicineUnit[i] < '0' || medicineUnit[i] > '9')
+                        return false;
+                }
+            }
             dcquery.prescribe_add(doctor_id, patient_id, medicineId,medicineDose, medicineUnit);
+            return true;
         }
         public string get_medicine_id(string medicineName)
         {
@@ -112,5 +127,65 @@ namespace DataBase_Demo
         {
             return dcquery.get_report_num(oper_id);
         }
+
+
+        public int edit_doc_info(string doc_id, string new_name, string new_num)
+        {
+            if (!_field_judge.isValidNumber(new_num))
+            {
+                return -1; // -1: 手机号码有问题
+            }
+            if (!_field_judge.isValidName(new_name))
+            {
+                return -2; // -2：名字长度不合法
+            }
+            return dcquery.edit_doc_info(doc_id, new_name, new_num);
+        }
+    }
+    public class field_judge
+    {
+        public bool isValidNumber(string phone_num)
+        {
+            if (phone_num.Length != 11)
+            {
+                return false;
+            }
+            foreach (char i in phone_num)
+            {
+                if (i < '0' || i > '9')
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        public bool isValidName(string name)
+        {
+            int actualLength = 0;
+            if (name.Length < 1 || name.Length > 3)
+            {
+                return false;
+            }
+            string text = name;
+            char[] c = text.ToCharArray();
+            for (int i = 0; i < c.Length; i++)
+            {
+                if (c[i] >= 0x4e00 && c[i] <= 0x9fbb)
+                {
+                    actualLength += 3;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            if (actualLength > 10)
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 }
+

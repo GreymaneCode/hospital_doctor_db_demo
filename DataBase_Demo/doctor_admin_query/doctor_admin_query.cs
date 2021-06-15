@@ -72,10 +72,29 @@ namespace DataBase_Demo
                 throw new Exception(ex.Message);
             }
         }
+        public OracleDataAdapter get_prescribe_query(string did,string pid)
+        {
+            String sql = string.Empty;
+            sql = "Select prescribe_id,patient_id,patient_name,medicine_name,medicine_id,unit, dose,prescribe_time From (prescribe natural join medicine)natural join patient where doctor_id=:did and patient.discharged='0' and patient_id=: pid order by (prescribe_time) DESC";
+            OracleCommand cmd = new OracleCommand(sql);
+            cmd.Parameters.Add(new OracleParameter("did", did));
+            cmd.Parameters.Add(new OracleParameter("pid", pid));
+
+            try
+            {
+                OracleDataAdapter adapt_doc_info = new OracleDataAdapter();
+                adapt_doc_info = dbutil.uniformed_query(cmd);
+                return adapt_doc_info;
+            }
+            catch (OracleException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
         public OracleDataAdapter get_patient_info_query(string did,string pid)
         {
             String sql = string.Empty;
-            sql = "Select patient_id,state_time,illness_condition,need_operation,advice From patient_state where doctor_id=:did and patient_id=: pid";
+            sql = "Select patient_id,patient_name,state_time,illness_condition,need_operation,advice From (patient_state natural join patient) where doctor_id=:did and patient.discharged='0'and patient_id=: pid order by (state_time) DESC";
             OracleCommand cmd = new OracleCommand(sql);
             cmd.Parameters.Add(new OracleParameter("did", did));
             cmd.Parameters.Add(new OracleParameter("pid", pid));
@@ -94,7 +113,7 @@ namespace DataBase_Demo
         public OracleDataAdapter get_patient_list_query(string id)
         {
             String sql = string.Empty;
-            sql = "Select patient_id,patient_name From (patient natural join patient_state) where doctor_id=:id ";
+            sql = "Select distinct patient_id, patient_name From (patient natural join registration ) where patient.discharged='0' and doctor_id=:id ";
             OracleCommand cmd = new OracleCommand(sql);
             cmd.Parameters.Add(new OracleParameter("id", id));
 
@@ -141,9 +160,7 @@ namespace DataBase_Demo
                 sql = "select operation_id,operation_name,sec_id,patient_id,operation_date,patient_name From (operation natural join patient） where (doctor_id=:id AND operation_date<to_timestamp('" + current_time + "','yyyy-mm-dd')) order by operation_date desc ";
             OracleCommand cmd = new OracleCommand(sql);
             cmd.Parameters.Add(new OracleParameter("id", id));
-            // cmd.Parameters.Add(new OracleParameter("current_time", current_time));
-
-
+            
             try
             {
                 OracleDataAdapter adapt_doc_info = new OracleDataAdapter();
@@ -155,26 +172,6 @@ namespace DataBase_Demo
                 throw new Exception(ex.Message);
             }
         }
-
-       /* public void patient_state_delete(string patient_id)
-        {
-            String sql = string.Empty;
-            sql = "delete from patient_state where patient_id = :id ";
-
-            OracleCommand cmd = new OracleCommand(sql);
-            cmd.Parameters.Add(new OracleParameter("id", patient_id));
-            try
-            {
-                OracleDataAdapter adapt = new OracleDataAdapter();
-                dbutil.uniformed_insert(cmd);
-
-            }
-            catch (OracleException ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }*/
-       //讲道理不应该删除，而是通过时间来覆盖
         public void patient_state_add(string doctor_id,string patient_id, string Illness, string NeedOp, string Advice)
         {
             string nowTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss", DateTimeFormatInfo.InvariantInfo);
@@ -368,6 +365,59 @@ namespace DataBase_Demo
             {
                 throw new Exception(ex.Message);
             }
+        }
+
+        public int edit_doc_info(string doc_id, string valid_name, string valid_num)
+        {
+            String sql_for_name = string.Empty;
+            sql_for_name = "update doctor set doctor_name =: valid_name where doctor_id =: doc_id";
+            String sql_for_num = string.Empty;
+            sql_for_num = "update doctor set phone_number =: valid_num where doctor_id =: doc_id";
+
+
+            OracleCommand cmd_for_name = new OracleCommand(sql_for_name);
+            cmd_for_name.Parameters.Add(new OracleParameter("valid_name", valid_name));
+            cmd_for_name.Parameters.Add(new OracleParameter("doc_id", doc_id));
+
+            OracleCommand cmd_for_num = new OracleCommand(sql_for_num);
+            cmd_for_num.Parameters.Add(new OracleParameter("valid_num", valid_num));
+            cmd_for_num.Parameters.Add(new OracleParameter("doc_id", doc_id));
+
+            try
+            {
+                dbutil.uniformed_update(cmd_for_name);
+            }
+            catch (OracleException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            try
+            {
+                dbutil.uniformed_update(cmd_for_num);
+            }
+            catch (OracleException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return 1;
+        }
+
+        public void edit_passwd(string doc_id, string new_passwd)
+        {
+            String sql_for_passwd_edit = string.Empty;
+            sql_for_passwd_edit = "update doctor set doctor_password =: new_passwd where doctor_id =: doc_id";
+            OracleCommand cmd_for_passwd_edit = new OracleCommand(sql_for_passwd_edit);
+            cmd_for_passwd_edit.Parameters.Add(new OracleParameter("new_passwd", new_passwd));
+            cmd_for_passwd_edit.Parameters.Add(new OracleParameter("doc_id", doc_id));
+            try
+            {
+                dbutil.uniformed_update(cmd_for_passwd_edit);
+            }
+            catch (OracleException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
         }
     }
 }

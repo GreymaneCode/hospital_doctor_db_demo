@@ -61,6 +61,23 @@ namespace DataBase_Demo
             }
            
         }
+        public void uniformed_update(OracleCommand cmd)
+        {
+            string connString = System.Configuration.ConfigurationManager.ConnectionStrings["connString"].ConnectionString;
+            OracleConnection conn = new OracleConnection(connString);
+            cmd.Connection = conn;
 
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (OracleException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+        }
     }
 }
