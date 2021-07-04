@@ -29,88 +29,114 @@ namespace DataBase_Demo
         /// </summary>
         private void InitializeComponent()
         {
-            this.doctorInfoButton = new System.Windows.Forms.Button();
-            this.patientInfoButton = new System.Windows.Forms.Button();
-            this.operationScheduleButton = new System.Windows.Forms.Button();
-            this.operationReportButton = new System.Windows.Forms.Button();
-            this.exitButton = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            this.skindoctorInfoButton = new CCWin.SkinControl.SkinButton();
+            this.skinpatientInfoButton = new CCWin.SkinControl.SkinButton();
+            this.skinoperationScheduleButton = new CCWin.SkinControl.SkinButton();
+            this.skinoperationReportButton = new CCWin.SkinControl.SkinButton();
+            this.skinexitButton = new CCWin.SkinControl.SkinButton();
             this.SuspendLayout();
             // 
-            // doctorInfoButton
+            // skindoctorInfoButton
             // 
-            this.doctorInfoButton.Location = new System.Drawing.Point(159, 37);
-            this.doctorInfoButton.Name = "doctorInfoButton";
-            this.doctorInfoButton.Size = new System.Drawing.Size(150, 93);
-            this.doctorInfoButton.TabIndex = 0;
-            this.doctorInfoButton.Text = "查看个人信息";
-            this.doctorInfoButton.UseVisualStyleBackColor = true;
-            this.doctorInfoButton.Click += new System.EventHandler(this.doctorInfoButton_Click);
+            this.skindoctorInfoButton.BackColor = System.Drawing.Color.Transparent;
+            this.skindoctorInfoButton.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.skindoctorInfoButton.DownBack = null;
+            this.skindoctorInfoButton.Location = new System.Drawing.Point(169, 134);
+            this.skindoctorInfoButton.MouseBack = null;
+            this.skindoctorInfoButton.Name = "skindoctorInfoButton";
+            this.skindoctorInfoButton.NormlBack = null;
+            this.skindoctorInfoButton.Size = new System.Drawing.Size(229, 106);
+            this.skindoctorInfoButton.TabIndex = 5;
+            this.skindoctorInfoButton.Text = "查看个人信息";
+            this.skindoctorInfoButton.UseVisualStyleBackColor = false;
+            this.skindoctorInfoButton.Click += new System.EventHandler(this.skindoctorInfoButton_Click);
             // 
-            // patientInfoButton
+            // skinpatientInfoButton
             // 
-            this.patientInfoButton.Location = new System.Drawing.Point(428, 37);
-            this.patientInfoButton.Name = "patientInfoButton";
-            this.patientInfoButton.Size = new System.Drawing.Size(150, 93);
-            this.patientInfoButton.TabIndex = 1;
-            this.patientInfoButton.Text = "查看病人信息";
-            this.patientInfoButton.UseVisualStyleBackColor = true;
-            this.patientInfoButton.Click += new System.EventHandler(this.patientInfoButton_Click);
+            this.skinpatientInfoButton.BackColor = System.Drawing.Color.Transparent;
+            this.skinpatientInfoButton.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.skinpatientInfoButton.DownBack = null;
+            this.skinpatientInfoButton.Location = new System.Drawing.Point(546, 134);
+            this.skinpatientInfoButton.MouseBack = null;
+            this.skinpatientInfoButton.Name = "skinpatientInfoButton";
+            this.skinpatientInfoButton.NormlBack = null;
+            this.skinpatientInfoButton.Size = new System.Drawing.Size(219, 106);
+            this.skinpatientInfoButton.TabIndex = 6;
+            this.skinpatientInfoButton.Text = "查看病人信息";
+            this.skinpatientInfoButton.UseVisualStyleBackColor = false;
+            this.skinpatientInfoButton.Click += new System.EventHandler(this.skinpatientInfoButton_Click);
             // 
-            // operationScheduleButton
+            // skinoperationScheduleButton
             // 
-            this.operationScheduleButton.Location = new System.Drawing.Point(159, 220);
-            this.operationScheduleButton.Name = "operationScheduleButton";
-            this.operationScheduleButton.Size = new System.Drawing.Size(150, 93);
-            this.operationScheduleButton.TabIndex = 2;
-            this.operationScheduleButton.Text = "查看手术安排";
-            this.operationScheduleButton.UseVisualStyleBackColor = true;
-            this.operationScheduleButton.Click += new System.EventHandler(this.operationScheduleButton_Click);
+            this.skinoperationScheduleButton.BackColor = System.Drawing.Color.Transparent;
+            this.skinoperationScheduleButton.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.skinoperationScheduleButton.DownBack = null;
+            this.skinoperationScheduleButton.Location = new System.Drawing.Point(169, 288);
+            this.skinoperationScheduleButton.MouseBack = null;
+            this.skinoperationScheduleButton.Name = "skinoperationScheduleButton";
+            this.skinoperationScheduleButton.NormlBack = null;
+            this.skinoperationScheduleButton.Size = new System.Drawing.Size(229, 98);
+            this.skinoperationScheduleButton.TabIndex = 7;
+            this.skinoperationScheduleButton.Text = "查看手术安排";
+            this.skinoperationScheduleButton.UseVisualStyleBackColor = false;
+            this.skinoperationScheduleButton.Click += new System.EventHandler(this.skinoperationScheduleButton_Click);
             // 
-            // operationReportButton
+            // skinoperationReportButton
             // 
-            this.operationReportButton.Location = new System.Drawing.Point(428, 220);
-            this.operationReportButton.Name = "operationReportButton";
-            this.operationReportButton.Size = new System.Drawing.Size(150, 93);
-            this.operationReportButton.TabIndex = 3;
-            this.operationReportButton.Text = "上传手术报告";
-            this.operationReportButton.UseVisualStyleBackColor = true;
-            this.operationReportButton.Click += new System.EventHandler(this.operationReportButton_Click);
+            this.skinoperationReportButton.BackColor = System.Drawing.Color.Transparent;
+            this.skinoperationReportButton.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.skinoperationReportButton.DownBack = null;
+            this.skinoperationReportButton.Location = new System.Drawing.Point(546, 288);
+            this.skinoperationReportButton.MouseBack = null;
+            this.skinoperationReportButton.Name = "skinoperationReportButton";
+            this.skinoperationReportButton.NormlBack = null;
+            this.skinoperationReportButton.Size = new System.Drawing.Size(219, 98);
+            this.skinoperationReportButton.TabIndex = 8;
+            this.skinoperationReportButton.Text = "上传手术报告";
+            this.skinoperationReportButton.UseVisualStyleBackColor = false;
+            this.skinoperationReportButton.Click += new System.EventHandler(this.skinoperationReportButton_Click);
             // 
-            // exitButton
+            // skinexitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(317, 369);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(120, 39);
-            this.exitButton.TabIndex = 4;
-            this.exitButton.Text = "退出";
-            this.exitButton.UseVisualStyleBackColor = true;
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            this.skinexitButton.BackColor = System.Drawing.Color.Transparent;
+            this.skinexitButton.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.skinexitButton.DownBack = null;
+            this.skinexitButton.Location = new System.Drawing.Point(368, 451);
+            this.skinexitButton.MouseBack = null;
+            this.skinexitButton.Name = "skinexitButton";
+            this.skinexitButton.NormlBack = null;
+            this.skinexitButton.Size = new System.Drawing.Size(204, 88);
+            this.skinexitButton.TabIndex = 9;
+            this.skinexitButton.Text = "退出";
+            this.skinexitButton.UseVisualStyleBackColor = false;
+            this.skinexitButton.Click += new System.EventHandler(this.skinexitButton_Click);
             // 
             // doctor_menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.exitButton);
-            this.Controls.Add(this.operationReportButton);
-            this.Controls.Add(this.operationScheduleButton);
-            this.Controls.Add(this.patientInfoButton);
-            this.Controls.Add(this.doctorInfoButton);
-            this.MaximumSize = new System.Drawing.Size(818, 497);
-            this.MinimumSize = new System.Drawing.Size(818, 497);
+            this.ClientSize = new System.Drawing.Size(920, 596);
+            this.Controls.Add(this.skinexitButton);
+            this.Controls.Add(this.skinoperationReportButton);
+            this.Controls.Add(this.skinoperationScheduleButton);
+            this.Controls.Add(this.skinpatientInfoButton);
+            this.Controls.Add(this.skindoctorInfoButton);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximumSize = new System.Drawing.Size(920, 596);
+            this.MinimumSize = new System.Drawing.Size(920, 596);
             this.Name = "doctor_menu";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Padding = new System.Windows.Forms.Padding(22, 72, 22, 24);
             this.Text = "doctor_menu";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button doctorInfoButton;
-        private System.Windows.Forms.Button patientInfoButton;
-        private System.Windows.Forms.Button operationScheduleButton;
-        private System.Windows.Forms.Button operationReportButton;
-        private System.Windows.Forms.Button exitButton;
+        private CCWin.SkinControl.SkinButton skindoctorInfoButton;
+        private CCWin.SkinControl.SkinButton skinpatientInfoButton;
+        private CCWin.SkinControl.SkinButton skinoperationScheduleButton;
+        private CCWin.SkinControl.SkinButton skinoperationReportButton;
+        private CCWin.SkinControl.SkinButton skinexitButton;
     }
 }

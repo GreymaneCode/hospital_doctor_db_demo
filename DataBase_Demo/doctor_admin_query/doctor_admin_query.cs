@@ -342,8 +342,9 @@ namespace DataBase_Demo
 
         public int get_report_num(string oper_id)
         {
+            int rownum = 0;
             String sql = string.Empty;
-            sql = "select COUNT(operation_id) FROM operation_report where operation_id =: oper_id";
+            sql = "select COUNT(*) FROM operation_report where operation_id =: oper_id";
 
             OracleCommand cmd = new OracleCommand(sql);
             cmd.Parameters.Add(new OracleParameter("oper_id", oper_id));
@@ -357,8 +358,11 @@ namespace DataBase_Demo
                 adapt.Fill(ds, "report_num");
 
                 DataTable temp = ds.Tables["report_num"];
-                int rownum = temp.Rows.Count;
-                
+
+                String tempstr = temp.Rows[0][0].ToString();
+
+                rownum = Convert.ToInt32(tempstr);
+
                 return rownum;
             }
             catch (OracleException ex)

@@ -26,11 +26,21 @@ namespace DataBase_Demo.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("USER ID=SCOTT;PASSWORD=TIGER;DATA SOURCE=localhost:1521/XE;PERSIST SECURITY INFO=" +
-            "True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("USER ID=scott;PASSWORD=oracle;DATA SOURCE=localhost:1521/orcl;PERSIST SECURITY IN" +
+            "FO=True")]
         public string ConnectionString {
             get {
                 return ((string)(this["ConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("USER ID=SCOTT;DATA SOURCE=localhost:1521/XE;PERSIST SECURITY INFO=True")]
+        public string ConnectionString1 {
+            get {
+                return ((string)(this["ConnectionString1"]));
             }
         }
     }

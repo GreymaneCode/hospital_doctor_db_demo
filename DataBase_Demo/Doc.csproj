@@ -121,11 +121,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="UI\editPassword.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\editPassword.Designer.cs">
       <DependentUpon>editPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\new_report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\new_report.Designer.cs">
+      <DependentUpon>new_report.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\patient_list.cs">
       <SubType>Form</SubType>
@@ -194,6 +205,9 @@
     <EmbeddedResource Include="UI\editPassword.resx">
       <DependentUpon>editPassword.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\new_report.resx">
+      <DependentUpon>new_report.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\patient_list.resx">
       <DependentUpon>patient_list.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,6 +258,17 @@
     </None>
     <None Include="DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
