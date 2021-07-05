@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="DataBase_Demo.exe.manifest" size="7659">
+    <dependentAssembly dependencyType="install" codebase="DataBase_Demo.exe.manifest" size="10420">
       <assemblyIdentity name="DataBase_Demo.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>zuIZ2UICjgtCKuNQT9sY89bAZNkuY+d3kO9DeWyL784=</dsig:DigestValue>
+        <dsig:DigestValue>/YD77z2NiR+W2GumGTxyzkNcdsihXnKK9iqw2Mr7qwI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
